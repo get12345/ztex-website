@@ -92,8 +92,8 @@ function NeuralMeshBackground() {
 function BaseGrid() {
   const cols = 12;
   const rows = 8;
-  const vertical: JSX.Element[] = [];
-  const horizontal: JSX.Element[] = [];
+  const vertical = [];
+  const horizontal = [];
 
   for (let i = 0; i <= cols; i++) {
     const x = (100 / cols) * i;
