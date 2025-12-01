@@ -24,14 +24,14 @@ export async function submitContact(formData: FormData) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.GMAIL_USER, // ztex.ltd@gmail.com (Primary)
+      user: process.env.GMAIL_USER, // info@ztex-japan.com (Primary)
       pass: process.env.GMAIL_APP_PASSWORD,
     },
   });
 
   const mailOptions = {
-    from: "ztex.ltd-info@gmail.com", // Send as alias
-    to: "ztex.ltd-info@gmail.com",   // Send to info address
+    from: "info@ztex-japan.com", // Send as alias
+    to: "info@ztex-japan.com",   // Send to info address
     subject: `【ZTEX】お問い合わせ: ${category} (${name}様)`,
     text: `
 Webサイトより新しいお問い合わせがありました。

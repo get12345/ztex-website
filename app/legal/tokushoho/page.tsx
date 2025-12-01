@@ -33,7 +33,7 @@ export default function TokushohoPage() {
                         <div className="grid grid-cols-1 gap-4 py-6 md:grid-cols-3">
                             <dt className="font-medium text-neutral-400">メールアドレス</dt>
                             <dd className="text-neutral-200 md:col-span-2">
-                                info@ztex.jp
+                                info@ztex-japan.com
                             </dd>
                         </div>
                         <div className="grid grid-cols-1 gap-4 py-6 md:grid-cols-3">

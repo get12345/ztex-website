@@ -24,7 +24,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 To enable the contact form, you need to set the following environment variables in `.env` (local) or Vercel Project Settings (production):
 
 ```env
-GMAIL_USER=ztex.ltd@gmail.com
+GMAIL_USER=info@ztex-japan.com
 GMAIL_APP_PASSWORD=xxxx xxxx xxxx xxxx  # Your 16-digit App Password
 ```
 

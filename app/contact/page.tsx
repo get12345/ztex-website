@@ -101,7 +101,7 @@ export default function ContactPage() {
                                         name="email"
                                         type="email"
                                         required
-                                        placeholder="example@ztex.jp"
+                                        placeholder="example@ztex-japan.com"
                                         className="border-neutral-800 bg-neutral-900/50 text-white placeholder:text-neutral-600 focus:border-neutral-600"
                                     />
                                 </div>
