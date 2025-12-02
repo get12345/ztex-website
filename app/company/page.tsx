@@ -33,10 +33,7 @@ export default function CompanyPage() {
               <dt className="font-medium text-neutral-400">資本金</dt>
               <dd className="text-neutral-200 md:col-span-2">500万円</dd>
             </div>
-            <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">
-              <dt className="font-medium text-neutral-400">代表電話番号</dt>
-              <dd className="text-neutral-200 md:col-span-2">090-8212-1719</dd>
-            </div>
+
             <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">
               <dt className="font-medium text-neutral-400">事業内容</dt>
               <dd className="text-neutral-200 md:col-span-2">

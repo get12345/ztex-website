@@ -1,6 +1,6 @@
 export const newsItems = [
     {
-        date: "2024.04.01",
+        date: "2025.12.01",
         title: "コーポレートサイトをリニューアルいたしました",
         category: "INFO",
     },
