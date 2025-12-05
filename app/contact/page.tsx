@@ -59,12 +59,12 @@ export default function ContactPage() {
                     {isSubmitted ? (
                         <div className="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-8 text-center backdrop-blur-sm">
                             <h2 className="mb-4 text-2xl font-bold text-white">
-                                送信完了いたしました
+                                送信完了（まだ完了していません）
                             </h2>
                             <p className="mb-8 text-neutral-400">
-                                お問い合わせありがとうございます。
+                                ご入力いただいたメールアドレスに確認メールを送信しました。
                                 <br />
-                                担当者より通常3営業日以内にご連絡させていただきます。
+                                メール内のリンクをクリックして、お問い合わせを完了させてください。
                             </p>
                             <Button
                                 onClick={() => setIsSubmitted(false)}
@@ -101,7 +101,7 @@ export default function ContactPage() {
                                         name="email"
                                         type="email"
                                         required
-                                        placeholder="example@ztex-japan.com"
+                                        placeholder="info@example.com"
                                         className="border-neutral-800 bg-neutral-900/50 text-white placeholder:text-neutral-600 focus:border-neutral-600"
                                     />
                                 </div>
