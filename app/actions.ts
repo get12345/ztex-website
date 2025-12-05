@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import nodemailer from "nodemailer";
 import { signToken, verifyToken, ContactData } from "@/lib/token";
+import { headers } from "next/headers";
 
 /**
  * Step 1: フォームデータを受け取り、本人確認メールを送る
@@ -24,7 +25,13 @@ export async function submitContact(formData: FormData) {
   const token = signToken(contactData);
 
   // 確認用URL
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  let baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+  if (!baseUrl) {
+    const headersList = await headers();
+    const host = headersList.get("host") || "localhost:3000";
+    const protocol = host.includes("localhost") ? "http" : "https";
+    baseUrl = `${protocol}://${host}`;
+  }
   const verifyUrl = `${baseUrl}/verify?token=${token}`;
 
   // メール送信設定
