@@ -9,9 +9,43 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "株式会社ZTEX | 自由に生きる人の、やわらかなフレームになる。",
+  title: "株式会社ZTEX | 技術を経営の確かな推進力に。",
   description:
-    "株式会社ZTEXは、AI × 自動化 × デザインで、中小企業・個人事業主・店舗の時間に余白を生み出すクリエイティブパートナーです。",
+    "AI導入・AXコンサルティングの株式会社ZTEX（ジーテックス）。業務自動化から高度AI実装、AI人材育成まで、経営課題を解決する「実利ある技術」を提供します。仙台・宮城から全国対応。",
+  keywords: ["AI導入", "AXコンサルティング", "業務自動化", "DX", "AI研修", "株式会社ZTEX", "ジーテックス"],
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "株式会社ZTEX",
+  alternateName: "ZTEX Inc.",
+  url: "https://ztex-japan.com",
+  logo: "https://ztex-japan.com/logo.png",
+  description: "AI導入・AXコンサルティングの専門企業。中小企業の経営課題を技術で解決します。",
+  foundingDate: "2023-03-07",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "福室2丁目8番17号 福室マンション314号",
+    addressLocality: "仙台市宮城野区",
+    addressRegion: "宮城県",
+    postalCode: "983-0005",
+    addressCountry: "JP",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer support",
+    email: "info@ztex-japan.com",
+    areaServed: "JP",
+    availableLanguage: "Japanese",
+  },
+  knowsAbout: [
+    "Artificial Intelligence",
+    "Business Process Automation",
+    "Digital Transformation",
+    "AX (AI Transformation)",
+    "LLM Engineering",
+  ],
 };
 
 export default function RootLayout({
@@ -22,6 +56,10 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`min-h-screen bg-black text-white ${inter.className}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {/* 画面全体の黒グラデ背景 */}
         <div className="relative min-h-screen bg-[radial-gradient(circle_at_top,_#181818_0,_#020202_55%,_#000000_100%)]">
           {/* 外枠ライン */}
