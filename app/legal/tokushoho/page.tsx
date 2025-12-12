@@ -20,7 +20,16 @@ export default function TokushohoPage() {
                                 宮城県仙台市宮城野区福室2丁目8番17号 福室マンション314号
                             </dd>
                         </div>
-
+                        <div className="grid grid-cols-1 gap-4 py-6 md:grid-cols-3">
+                            <dt className="font-medium text-neutral-400">電話番号</dt>
+                            <dd className="text-neutral-200 md:col-span-2">
+                                090-8212-1719
+                                <br />
+                                <span className="text-xs text-neutral-500">
+                                    ※サービスに関するお問い合わせは、まずはフォームよりお願いいたします。
+                                </span>
+                            </dd>
+                        </div>
                         <div className="grid grid-cols-1 gap-4 py-6 md:grid-cols-3">
                             <dt className="font-medium text-neutral-400">メールアドレス</dt>
                             <dd className="text-neutral-200 md:col-span-2">

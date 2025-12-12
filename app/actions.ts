@@ -2,11 +2,9 @@
 
 import { revalidatePath } from "next/cache";
 import nodemailer from "nodemailer";
-import { signToken, verifyToken, ContactData } from "@/lib/token";
-import { headers } from "next/headers";
 
 /**
- * Step 1: フォームデータを受け取り、本人確認メールを送る
+ * お問い合わせフォームのデータを受け取る Server Action
  */
 export async function submitContact(formData: FormData) {
   const name = formData.get("name") as string;
@@ -15,93 +13,28 @@ export async function submitContact(formData: FormData) {
   const category = formData.get("category") as string;
   const message = formData.get("message") as string;
 
-  // データの検証 (簡易)
-  if (!name || !email || !category || !message) {
-    return { success: false, error: "必須項目が入力されていません。" };
-  }
+  console.log("SOFT FRAME contact:", { name, email, phone, category, message });
+  console.log("Env check:", {
+    user: process.env.GMAIL_USER ? "Set" : "Not Set",
+    pass: process.env.GMAIL_APP_PASSWORD ? "Set" : "Not Set"
+  });
 
-  // トークン生成
-  const contactData: ContactData = { name, email, phone, category, message };
-  const token = signToken(contactData);
-
-  // 確認用URL
-  let baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-  if (!baseUrl) {
-    const headersList = await headers();
-    const host = headersList.get("host") || "localhost:3000";
-    const protocol = host.includes("localhost") ? "http" : "https";
-    baseUrl = `${protocol}://${host}`;
-  }
-  const verifyUrl = `${baseUrl}/verify?token=${token}`;
-
-  // メール送信設定
+  // Gmail SMTP 設定
+  // 環境変数 GMAIL_USER (Primary Account), GMAIL_APP_PASSWORD が必要
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.GMAIL_USER,
+      user: process.env.GMAIL_USER, // info@ztex-japan.com (Primary)
       pass: process.env.GMAIL_APP_PASSWORD,
     },
   });
 
-  // ユーザーへの確認メール
   const mailOptions = {
-    from: "info@ztex-japan.com",
-    to: email, // ユーザーに送る
-    subject: "【ZTEX】お問い合わせ確認（まだ完了していません）",
-    text: `
-${name} 様
-
-株式会社ZTEXにお問い合わせいただきありがとうございます。
-以下のリンクをクリックして、お問い合わせを完了させてください。
-
-■ お問い合わせ完了リンク
-${verifyUrl}
-
-※このリンクは24時間有効です。
-※お心当たりがない場合は、このメールを破棄してください。
-
---------------------------------------------------
-株式会社ZTEX
-info@ztex-japan.com
---------------------------------------------------
-    `,
-  };
-
-  try {
-    await transporter.sendMail(mailOptions);
-    return { success: true };
-  } catch (error) {
-    console.error("Error sending verification email:", error);
-    return { success: false, error: "確認メールの送信に失敗しました。" };
-  }
-}
-
-/**
- * Step 2: トークンを検証し、管理者にメールを送る
- */
-export async function verifyAndSend(token: string) {
-  const data = verifyToken(token);
-  if (!data) {
-    return { success: false, error: "無効なトークン、または期限切れです。" };
-  }
-
-  const { name, email, phone, category, message } = data;
-
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_APP_PASSWORD,
-    },
-  });
-
-  // 管理者への通知メール
-  const adminMailOptions = {
-    from: "info@ztex-japan.com",
-    to: "info@ztex-japan.com", // 管理者に送る
+    from: "info@ztex-japan.com", // Send as alias
+    to: "info@ztex-japan.com",   // Send to info address
     subject: `【ZTEX】お問い合わせ: ${category} (${name}様)`,
     text: `
-Webサイトより新しいお問い合わせがありました（本人確認済み）。
+Webサイトより新しいお問い合わせがありました。
 
 --------------------------------------------------
 ■ お名前
@@ -123,10 +56,11 @@ ${message}
   };
 
   try {
-    await transporter.sendMail(adminMailOptions);
+    await transporter.sendMail(mailOptions);
+    console.log("Email sent successfully");
     return { success: true };
   } catch (error) {
-    console.error("Error sending admin email:", error);
-    return { success: false, error: "管理者への送信に失敗しました。" };
+    console.error("Error sending email:", error);
+    return { success: false, error: "メール送信に失敗しました。" };
   }
 }
