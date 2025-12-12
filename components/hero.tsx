@@ -170,7 +170,7 @@ export function Hero() {
         >
           {/* タグライン */}
           <p className="text-[10px] uppercase tracking-[0.4em] text-neutral-400 md:text-xs">
-            AI × AUTOMATION × DESIGN
+            TECH × STRATEGY × MANAGEMENT
           </p>
 
           {/* メインコピー */}
@@ -179,14 +179,16 @@ export function Hero() {
              sm:text-3xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-snug"
           >
             <span className="whitespace-nowrap">
-              自由に生きられる世界を創る。
+              「技術」を、経営の確かな推進力に。
             </span>
           </h1>
           {/* サブコピー */}
           <p className="text-sm leading-relaxed text-neutral-400 md:text-lg md:leading-relaxed">
-            雑務や反復作業は、AIと自動化に預けて。
+            AI・自動化技術による業務プロセスの再構築で、
             <br />
-            あなた自身は「創る」「決める」に集中できる世界へ。
+            現場の生産性向上と、経営資源の最適化を実現。
+            <br />
+            企業の持続的な成長を支える技術パートナーです。
           </p>
 
           {/* News Section */}
@@ -198,7 +200,7 @@ export function Hero() {
             <ul className="mt-4 space-y-3">
               {newsItems.slice(0, 3).map((item, i) => (
                 <li key={i} className="group flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-4">
-                  <span className="text-[10px] text-neutral-500 font-mono group-hover:text-neutral-400 transition-colors">{item.date}</span>
+                  <span className="tabular-nums text-xs text-neutral-500 group-hover:text-neutral-400 transition-colors">{item.date}</span>
                   <a href="/news" className="text-xs text-neutral-300 group-hover:text-white transition-colors line-clamp-1">
                     {item.title}
                   </a>

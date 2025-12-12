@@ -11,10 +11,11 @@ export default function TrainingPage() {
         </p>
 
         <h1 className="mt-3 text-2xl font-semibold md:text-3xl lg:text-4xl">
-          AI Training & Reskilling Program
+          AI人材育成・内製化支援
         </h1>
         <p className="mt-4 max-w-2xl text-sm text-neutral-400 md:text-base">
-          現場メンバーの「AIリテラシー」を、座学だけでなく実務ベースで底上げするプログラムです。
+          一時的なツール導入で終わらせず、現場社員がAIを使いこなせる状態まで伴走。
+          「自走できる組織」への変革を促し、長期的な競争力を高めます。
           ChatGPT / Claude / Gemini などの基礎から、社内業務に落とし込むワークショップまで設計します。
         </p>
 

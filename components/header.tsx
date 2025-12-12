@@ -8,19 +8,19 @@ import { Button } from "@/components/ui/button";
 const serviceLinks = [
   {
     href: "/services/automation",
-    label: "AI Automation Design",
+    label: "業務フロー自動化・効率化支援",
   },
   {
     href: "/services/training",
-    label: "AI Training & Reskilling Program",
+    label: "AI人材育成・内製化支援",
   },
   {
     href: "/services/model-engineering",
-    label: "AI Model Engineering Lab",
+    label: "高度AI導入・技術顧問",
   },
   {
     href: "/services/creative-intelligence",
-    label: "AI Creative Intelligence Studio",
+    label: "生成AI活用ブランディング・制作",
   },
 ];
 

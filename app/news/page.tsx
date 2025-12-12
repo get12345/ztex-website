@@ -25,8 +25,8 @@ export default function NewsPage() {
 
                 <div className="space-y-6">
                     {newsItems.map((item, i) => (
-                        <article key={i} className="flex flex-col gap-2 border-b border-neutral-800 pb-6 sm:flex-row sm:items-baseline sm:gap-8">
-                            <time className="text-sm font-mono text-neutral-500 shrink-0">{item.date}</time>
+                        <article key={i} className="flex flex-col gap-2 border-b border-neutral-800 pb-6 sm:flex-row sm:items-center sm:gap-8">
+                            <time className="text-sm tabular-nums text-neutral-500 shrink-0">{item.date}</time>
                             <div className="flex flex-col gap-2">
                                 <span className="inline-block w-fit rounded bg-neutral-900 px-2 py-0.5 text-[10px] font-medium text-neutral-400 border border-neutral-800">
                                     {item.category}

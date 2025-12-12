@@ -10,10 +10,11 @@ export default function CreativeIntelligencePage() {
         </p>
 
         <h1 className="mt-3 text-2xl font-semibold md:text-3xl lg:text-4xl">
-          AI Creative Intelligence Studio
+          生成AI活用ブランディング・制作
         </h1>
         <p className="mt-4 max-w-2xl text-sm text-neutral-400 md:text-base">
-          Sora / Runway / Midjourney / Pika などのツールを組み合わせ、
+          最新の生成AI技術を駆使し、高品質なクリエイティブを迅速に制作。
+          広報・販促活動におけるコストパフォーマンスを最大化し、認知拡大に貢献します。
           コンセプトづくりからビジュアル生成、動画構成、納品フォーマット設計まで一気通貫でサポートします。
         </p>
 

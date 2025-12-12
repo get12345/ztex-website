@@ -8,8 +8,8 @@ import { ArrowRight } from "lucide-react";
 
 const services = [
   {
-    title: "AI Automation Design",
-    body: "n8n / Zapier / Make / API連携を活用し、反復作業や事務処理を“静かに流れるフロー”として自動化します。業務効率化と人的コスト削減を同時に実現。",
+    title: "業務フロー自動化・効率化支援",
+    body: "API連携やノーコードツールを活用し、手作業に依存した事務処理や反復業務を自動化。人為的ミスの削減とコスト適正化により、利益率の高い組織体制を構築します。",
     href: "/services/automation",
     image: "/images/automation.png",
     features: [
@@ -19,8 +19,8 @@ const services = [
     ],
   },
   {
-    title: "AI Training & Reskilling Program",
-    body: "企業・学校向けに実施している生成AI研修をベースに、現場メンバーのAIリテラシーを体系的に底上げ。AI活用の“内製化”を伴走支援します。",
+    title: "AI人材育成・内製化支援",
+    body: "一時的なツール導入で終わらせず、現場社員がAIを使いこなせる状態まで伴走。「自走できる組織」への変革を促し、長期的な競争力を高めます。",
     href: "/services/training",
     image: "/images/traning.png",
     features: [
@@ -30,8 +30,8 @@ const services = [
     ],
   },
   {
-    title: "AI Model Engineering Lab",
-    body: "Fine-tuning / LoRA / RLAIF / Attention最適化 / RAG強化など、AIモデルそのものを性能向上。企業専用の“強いAI”を設計します。",
+    title: "高度AI導入・技術顧問",
+    body: "大規模言語モデル（LLM）の専門的知見に基づき、貴社独自のAI環境を構築。※RLHF/LoRA等の高度技術も踏まえ、セキュリティと実益を兼ね備えた最適解を提案します。",
     href: "/services/model-engineering",
     image: "/images/model.png",
     features: [
@@ -41,8 +41,8 @@ const services = [
     ],
   },
   {
-    title: "AI Creative Intelligence Studio",
-    body: "Sora / Runway / Midjourney / Pika を用い、画像・動画・構成案・ストーリー生成まで一貫サポート。AI × 映像の新しい表現を創造します。",
+    title: "生成AI活用ブランディング・制作",
+    body: "最新の生成AI技術を駆使し、高品質なクリエイティブを迅速に制作。広報・販促活動におけるコストパフォーマンスを最大化し、認知拡大に貢献します。",
     href: "/services/creative-intelligence",
     image: "/images/creative.png",
     features: [

@@ -19,33 +19,32 @@ export function MissionSection() {
           <div>
             <p className="section-eyebrow">MISSION</p>
             <h2 className="section-title">
-              自由に生きられる世界を、
+              経営課題を解決する、
               <br />
-              「やわらかな設計」で支える。
+              「実利ある技術」の実装を。
             </h2>
           </div>
 
           <div className="grid gap-6 text-sm text-neutral-400 md:grid-cols-2 md:text-base">
             <div className="space-y-3">
               <h3 className="text-sm font-medium text-neutral-100 md:text-base">
-                SOFT = 柔らかく寄り添う
+                Client First = 現場視点の定着支援
               </h3>
               <p className="section-description">
-                技術よりも先に「人」を見る。どんなに高度なAIや自動化も、
-                現場の温度感や不安を無視しては根づきません。SOFT FRAME は、
-                対話と小さな一歩を重ねながら、チームにとって無理のない導入スピードを
-                一緒に決めていきます。
+                高度な技術も、現場で使われなければ意味がありません。
+                経営層の意図と現場の実情、双方を深く理解し、
+                組織に無理なく浸透する導入プロセスを設計します。
               </p>
             </div>
 
             <div className="space-y-3">
               <h3 className="text-sm font-medium text-neutral-100 md:text-base">
-                FRAME = 混沌を構造化して支える
+                Structural Design = 堅牢な仕組み化
               </h3>
               <p className="section-description">
-                「誰が・いつ・何を・どうやるか」を、仕組みとしてフレーム化する。
-                自動化ツールやAIエージェント、RAG、専用ダッシュボードを組み合わせ、
-                ばらばらだった業務フローを一枚の図に落とし込みます。
+                属人化した業務を「構造」として可視化・再定義します。
+                AIと自動化技術を適切に組み込み、特定の個人に依存しない、
+                安定した事業基盤を構築します。
               </p>
             </div>
           </div>

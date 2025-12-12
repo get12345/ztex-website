@@ -1,5 +1,10 @@
 export const newsItems = [
     {
+        date: "2025.12.13",
+        title: "年末年始休業のお知らせ（12/28～1/5）",
+        category: "INFO",
+    },
+    {
         date: "2024.04.01",
         title: "コーポレートサイトをリニューアルいたしました",
         category: "INFO",

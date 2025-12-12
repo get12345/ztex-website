@@ -8,11 +8,11 @@ export default function AutomationPage() {
         <p className="section-eyebrow">SERVICE 01 — AI AUTOMATION DESIGN</p>
 
         <h1 className="mt-3 text-2xl font-semibold md:text-3xl lg:text-4xl">
-          AI Automation Design
+          業務フロー自動化・効率化支援
         </h1>
         <p className="mt-4 max-w-2xl text-sm text-neutral-400 md:text-base">
-          n8n / Zapier / Make / 各種API / スプレッドシート連携を組み合わせ、
-          「人が毎日やっているけれど、本当はやりたくない作業」を静かに自動化します。
+          API連携やノーコードツールを活用し、手作業に依存した事務処理や反復業務を自動化。
+          人為的ミスの削減とコスト適正化により、利益率の高い組織体制を構築します。
           現場のワークフローに合わせた設計を行うため、「動かない自動化」にはしません。
         </p>
 

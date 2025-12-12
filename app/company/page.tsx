@@ -15,7 +15,7 @@ export default function CompanyPage() {
           <dl className="divide-y divide-neutral-800 border-t border-neutral-800">
             <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">
               <dt className="font-medium text-neutral-400">会社名</dt>
-              <dd className="text-neutral-200 md:col-span-2">株式会社ZTEX</dd>
+              <dd className="text-neutral-200 md:col-span-2">株式会社ZTEX (ジーテックス)</dd>
             </div>
             <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">
               <dt className="font-medium text-neutral-400">所在地</dt>
@@ -27,20 +27,17 @@ export default function CompanyPage() {
             </div>
             <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">
               <dt className="font-medium text-neutral-400">設立</dt>
-              <dd className="text-neutral-200 md:col-span-2">2023年3月1日</dd>
+              <dd className="text-neutral-200 md:col-span-2">2023年3月7日</dd>
             </div>
             <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">
               <dt className="font-medium text-neutral-400">資本金</dt>
-              <dd className="text-neutral-200 md:col-span-2">500万円</dd>
+              <dd className="text-neutral-200 md:col-span-2">5,000,000円</dd>
             </div>
-            <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">
-              <dt className="font-medium text-neutral-400">代表電話番号</dt>
-              <dd className="text-neutral-200 md:col-span-2">090-8212-1719</dd>
-            </div>
+
             <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">
               <dt className="font-medium text-neutral-400">事業内容</dt>
               <dd className="text-neutral-200 md:col-span-2">
-                システム開発 / AI導入支援 / DXコンサルティング / Web制作
+                システム開発 / AI導入支援 / AXコンサルティング / Web制作
               </dd>
             </div>
             <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">
@@ -51,7 +48,7 @@ export default function CompanyPage() {
             </div>
           </dl>
         </div>
-      </div>
-    </main>
+      </div >
+    </main >
   );
 }

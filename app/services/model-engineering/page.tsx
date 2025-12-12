@@ -10,10 +10,11 @@ export default function ModelEngineeringPage() {
         </p>
 
         <h1 className="mt-3 text-2xl font-semibold md:text-3xl lg:text-4xl">
-          AI Model Engineering Lab
+          高度AI導入・技術顧問
         </h1>
         <p className="mt-4 max-w-2xl text-sm text-neutral-400 md:text-base">
-          Fine-tuning / LoRA / RAG設計 / Attention最適化 / RLAIF など、
+          大規模言語モデル（LLM）の専門的知見に基づき、貴社独自のAI環境を構築。
+          ※RLHF/LoRA等の高度技術も踏まえ、セキュリティと実益を兼ね備えた最適解を提案します。
           モデルの「中身」に踏み込んだチューニングを行い、目的に特化した高精度なAIを一緒に作り込みます。
         </p>
 
