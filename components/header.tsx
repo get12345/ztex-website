@@ -42,7 +42,7 @@ export function Header() {
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 md:px-6">
         {/* 左：ロゴ */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-sm tracking-[0.35em] text-neutral-300">
+          <span className="text-xl tracking-[0.35em] text-neutral-300">
             ZTEX
           </span>
         </Link>
