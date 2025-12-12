@@ -178,8 +178,8 @@ export function Hero() {
             className="text-2xl font-bold leading-tight text-neutral-50 
              sm:text-3xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-snug"
           >
-            <span className="whitespace-nowrap">
-              「技術」を、経営の確かな推進力に。
+            <span className="md:whitespace-nowrap">
+              技術を経営の確かな推進力に。
             </span>
           </h1>
           {/* サブコピー */}
