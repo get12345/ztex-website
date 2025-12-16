@@ -20,7 +20,7 @@ export default function ModelEngineeringPage() {
 
         <div className="mt-8 md:mt-12 aspect-video w-full overflow-hidden rounded-xl border border-neutral-800">
           <img
-            src="/images/model.png"
+            src="/images/kouseido.jpeg"
             alt="AI Model Engineering Lab"
             className="h-full w-full object-cover"
           />

@@ -21,7 +21,7 @@ export default function TrainingPage() {
 
         <div className="mt-8 md:mt-12 aspect-video w-full overflow-hidden rounded-xl border border-neutral-800">
           <img
-            src="/images/traning.png"
+            src="/images/kyouiku.jpeg"
             alt="AI Training & Reskilling Program"
             className="h-full w-full object-cover"
           />

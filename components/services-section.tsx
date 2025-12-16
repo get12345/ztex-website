@@ -11,7 +11,7 @@ const services = [
     title: "業務フロー自動化・効率化支援",
     body: "API連携やノーコードツールを活用し、手作業に依存した事務処理や反復業務を自動化。人為的ミスの削減とコスト適正化により、利益率の高い組織体制を構築します。",
     href: "/services/automation",
-    image: "/images/automation.png",
+    image: "/images/jidouka.jpeg",
     features: [
       "業務フローの可視化・再設計",
       "ノーコードツールによる自動化実装",
@@ -22,7 +22,7 @@ const services = [
     title: "AI人材育成・内製化支援",
     body: "一時的なツール導入で終わらせず、現場社員がAIを使いこなせる状態まで伴走。「自走できる組織」への変革を促し、長期的な競争力を高めます。",
     href: "/services/training",
-    image: "/images/traning.png",
+    image: "/images/kyouiku.jpeg",
     features: [
       "階層別・職種別カリキュラム",
       "実践的なプロンプトエンジニアリング",
@@ -33,7 +33,7 @@ const services = [
     title: "高度AI導入・技術顧問",
     body: "大規模言語モデル（LLM）の専門的知見に基づき、貴社独自のAI環境を構築。※RLHF/LoRA等の高度技術も踏まえ、セキュリティと実益を兼ね備えた最適解を提案します。",
     href: "/services/model-engineering",
-    image: "/images/model.png",
+    image: "/images/kouseido.jpeg",
     features: [
       "LLMのファインチューニング",
       "RAG（検索拡張生成）システムの構築",
@@ -44,7 +44,7 @@ const services = [
     title: "生成AI活用ブランディング・制作",
     body: "最新の生成AI技術を駆使し、高品質なクリエイティブを迅速に制作。広報・販促活動におけるコストパフォーマンスを最大化し、認知拡大に貢献します。",
     href: "/services/creative-intelligence",
-    image: "/images/creative.png",
+    image: "/images/media.jpeg",
     features: [
       "AIによる画像・動画生成",
       "クリエイティブ制作の効率化",

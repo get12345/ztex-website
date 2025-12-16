@@ -20,7 +20,7 @@ export default function CreativeIntelligencePage() {
 
         <div className="mt-8 md:mt-12 aspect-video w-full overflow-hidden rounded-xl border border-neutral-800">
           <img
-            src="/images/creative.png"
+            src="/images/media.jpeg"
             alt="AI Creative Intelligence Studio"
             className="h-full w-full object-cover"
           />
