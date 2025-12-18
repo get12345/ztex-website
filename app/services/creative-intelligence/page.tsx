@@ -1,9 +1,17 @@
+import { Metadata } from "next";
+import Image from "next/image";
 import { PricingSection } from "@/components/pricing-section";
 import { FAQSection } from "@/components/faq-section";
 
+export const metadata: Metadata = {
+  title: "生成AI活用ブランディング・制作 | 株式会社ZTEX",
+  description: "最新の生成AI技術を駆使し、高品質なクリエイティブを迅速に制作。動画、画像、SNSコンテンツなど、広報・販促コストを抑えつつ認知拡大を支援します。",
+};
+
 export default function CreativeIntelligencePage() {
   return (
-    <main className="min-h-screen bg-black text-neutral-50">
+    <div className="min-h-screen bg-black text-neutral-50">
+      {/* ... (rest of the content) */}
       <div className="section-inner py-16 md:py-20">
         <p className="section-eyebrow">
           SERVICE 04 — AI CREATIVE INTELLIGENCE STUDIO
@@ -18,11 +26,14 @@ export default function CreativeIntelligencePage() {
           コンセプトづくりからビジュアル生成、動画構成、納品フォーマット設計まで一気通貫でサポートします。
         </p>
 
-        <div className="mt-8 md:mt-12 aspect-video w-full overflow-hidden rounded-xl border border-neutral-800">
-          <img
+        <div className="mt-8 md:mt-12 aspect-video w-full overflow-hidden rounded-xl border border-neutral-800 relative">
+          <Image
             src="/images/media.jpeg"
             alt="AI Creative Intelligence Studio"
-            className="h-full w-full object-cover"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 800px"
+            priority
           />
         </div>
 
@@ -124,6 +135,6 @@ export default function CreativeIntelligencePage() {
 
       <PricingSection type="consult" />
       <FAQSection />
-    </main>
+    </div>
   );
 }

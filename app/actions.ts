@@ -12,6 +12,29 @@ export async function submitContact(formData: FormData) {
   const phone = formData.get("phone") as string;
   const category = formData.get("category") as string;
   const message = formData.get("message") as string;
+  const recaptchaToken = formData.get("recaptchaToken") as string;
+
+  // reCAPTCHA 検証
+  if (!recaptchaToken) {
+    return { success: false, error: "reCAPTCHAトークンがありません。" };
+  }
+
+  try {
+    const verifyRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
+    });
+    const verifyData = await verifyRes.json();
+
+    if (!verifyData.success || verifyData.score < 0.5) {
+      console.warn("reCAPTCHA validation failed:", verifyData);
+      return { success: false, error: "スパムの可能性があるため送信できませんでした。" };
+    }
+  } catch (err) {
+    console.error("reCAPTCHA verification error:", err);
+    return { success: false, error: "セキュリティ検証中にエラーが発生しました。" };
+  }
 
   console.log("SOFT FRAME contact:", { name, email, phone, category, message });
   console.log("Env check:", {

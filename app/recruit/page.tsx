@@ -1,10 +1,16 @@
+import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 
+export const metadata: Metadata = {
+  title: "採用情報 | 株式会社ZTEX",
+  description: "株式会社ZTEXでは、AIと自動化の力で「自由に生きられる世界」を創る仲間を募集しています。セールス、エンジニア、アシスタントの募集要項はこちら。",
+};
+
 export default function RecruitPage() {
   return (
-    <main className="min-h-screen bg-black text-neutral-50">
+    <div className="min-h-screen bg-black text-neutral-50">
       <div className="section-inner py-16 md:py-20">
         <p className="section-eyebrow">RECRUIT</p>
 
@@ -294,6 +300,6 @@ export default function RecruitPage() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

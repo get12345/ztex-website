@@ -9,7 +9,10 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "株式会社ZTEX | 技術を経営の確かな推進力に。",
+  title: {
+    default: "株式会社ZTEX | 技術を経営の確かな推進力に。",
+    template: "%s | 株式会社ZTEX",
+  },
   description:
     "AI導入・AXコンサルティングの株式会社ZTEX（ジーテックス）。業務自動化から高度AI実装、AI人材育成まで、経営課題を解決する「実利ある技術」を提供します。仙台・宮城から全国対応。",
   keywords: ["AI導入", "AXコンサルティング", "業務自動化", "DX", "AI研修", "株式会社ZTEX", "ジーテックス"],
@@ -74,9 +77,7 @@ export default function RootLayout({
             <Header />
 
             {/* ★ ページごとの中身（ここに /, /services/..., /company などが入る） */}
-            <main className="flex-1">
-              {children}
-            </main>
+            {children}
 
             {/* ★ 全ページ共通フッター（常に一番下に出す） */}
             <Footer />

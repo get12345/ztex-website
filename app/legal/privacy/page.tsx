@@ -1,6 +1,13 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "プライバシーポリシー | 株式会社ZTEX",
+    description: "株式会社ZTEXの個人情報保護方針（プライバシーポリシー）についてのご案内です。",
+};
+
 export default function PrivacyPage() {
     return (
-        <main className="min-h-screen bg-black text-neutral-50">
+        <div className="min-h-screen bg-black text-neutral-50">
             <div className="section-inner py-16 md:py-20">
                 <h1 className="text-2xl font-semibold md:text-3xl">
                     プライバシーポリシー
@@ -71,6 +78,6 @@ export default function PrivacyPage() {
                     </section>
                 </div>
             </div>
-        </main>
+        </div>
     );
 }

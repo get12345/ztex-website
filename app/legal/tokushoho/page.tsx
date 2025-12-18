@@ -1,6 +1,13 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "特定商取引法に基づく表記 | 株式会社ZTEX",
+    description: "株式会社ZTEXの特定商取引法に基づく表記（販売業者、所在地、配送、支払い等）に関するご案内です。",
+};
+
 export default function TokushohoPage() {
     return (
-        <main className="min-h-screen bg-black text-neutral-50">
+        <div className="min-h-screen bg-black text-neutral-50">
             <div className="section-inner py-16 md:py-20">
                 <h1 className="text-2xl font-semibold md:text-3xl">
                     特定商取引法に基づく表記
@@ -68,6 +75,6 @@ export default function TokushohoPage() {
                     </dl>
                 </div>
             </div>
-        </main>
+        </div>
     );
 }

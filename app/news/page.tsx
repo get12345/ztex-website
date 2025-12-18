@@ -1,12 +1,17 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { newsItems } from "@/lib/data";
 import { ArrowLeft } from "lucide-react";
 
+export const metadata: Metadata = {
+    title: "お知らせ | 株式会社ZTEX",
+    description: "株式会社ZTEXの最新ニュース、プレスリリース、休業案内などのお知らせ一覧です。",
+};
 
 export default function NewsPage() {
     return (
-        <main className="min-h-screen bg-black text-neutral-50">
+        <div className="min-h-screen bg-black text-neutral-50">
             <div className="mx-auto max-w-4xl px-4 py-20 md:px-6 lg:py-28">
                 <div className="mb-12">
                     <Button
@@ -39,6 +44,6 @@ export default function NewsPage() {
                     ))}
                 </div>
             </div>
-        </main>
+        </div>
     );
 }

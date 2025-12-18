@@ -1,8 +1,13 @@
-// app/company/page.tsx
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "会社概要 | 株式会社ZTEX",
+  description: "株式会社ZTEX（ジーテックス）の会社概要。所在地、設立日、事業内容などについてご紹介します。",
+};
 
 export default function CompanyPage() {
   return (
-    <main className="min-h-screen bg-black text-neutral-50">
+    <div className="min-h-screen bg-black text-neutral-50">
       <div className="section-inner py-16 md:py-20">
         <p className="section-eyebrow">COMPANY</p>
 
@@ -49,6 +54,6 @@ export default function CompanyPage() {
           </dl>
         </div>
       </div >
-    </main >
+    </div>
   );
 }

@@ -1,9 +1,80 @@
+import { Metadata } from "next";
+import Image from "next/image";
 import { PricingSection } from "@/components/pricing-section";
 import { FAQSection } from "@/components/faq-section";
 
+export const metadata: Metadata = {
+  title: "高度AI導入・技術顧問 | 株式会社ZTEX",
+  description: "LLMの専門的知見に基づき、貴社独自のAI環境を構築。モデルのチューニングやRAG構成の改善により、ビジネス特化の高精度なAIを実現します。",
+};
+
+const faqs = [
+  {
+    question: "社内にGPUサーバーが必要ですか？",
+    answer: "必ずしも必要ではありません。初期フェーズではAWSやGCPなどのクラウドGPU利用を推奨しています。機密性が極めて高く、オンプレミス環境が必須の場合のみ、ハードウェア選定からサポートいたします。",
+  },
+  {
+    question: "学習データ（社内文書）の整備ができていないのですが。",
+    answer: "ご安心ください。データのクレンジング（整形）作業からご支援します。PDF、Word、Excelなどが散在している状態でも、それらをAIが読み取れる形式に変換するパイプライン構築から承ります。",
+  },
+  {
+    question: "RAG（検索拡張）とファインチューニングの違いは何ですか？",
+    answer: "RAGは「カンニングペーパーを見ながら答える」仕組みで、最新情報や社内規定の参照に向いています。ファインチューニングは「脳みそを書き換える」仕組みで、特定の口調や回答フォーマットを覚えさせるのに向いています。目的に応じて使い分け、あるいは組み合わせます。",
+  },
+  {
+    question: "オープンソースモデル（Llama等）の商用利用は安全ですか？",
+    answer: "はい。各モデルのライセンス（Apache 2.0やLlama Community License等）を厳密に確認し、商用利用可能なモデルのみを選定・採用します。ライセンスリスクのない安全な開発を行います。",
+  },
+];
+
 export default function ModelEngineeringPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "高度AI導入・技術顧問",
+    provider: {
+      "@type": "Organization",
+      name: "株式会社ZTEX",
+      url: "https://ztex-japan.com",
+    },
+    description: "LLMの専門的知見に基づき、貴社独自のAI環境を構築。RAGやFine-tuningによりビジネス特化の高精度なAIを実現。",
+    areaServed: "JP",
+    serviceType: "AI Engineering",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "AI Engineering Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "社内規定特化RAG構築" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "ドメイン特化モデル構築" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "PoC開発" } }
+      ]
+    }
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.answer,
+      },
+    })),
+  };
+
   return (
-    <main className="min-h-screen bg-black text-neutral-50">
+    <div className="min-h-screen bg-black text-neutral-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      {/* ... (rest of the content) */}
       <div className="section-inner py-16 md:py-20">
         <p className="section-eyebrow">
           SERVICE 03 — AI MODEL ENGINEERING LAB
@@ -18,11 +89,14 @@ export default function ModelEngineeringPage() {
           モデルの「中身」に踏み込んだチューニングを行い、目的に特化した高精度なAIを一緒に作り込みます。
         </p>
 
-        <div className="mt-8 md:mt-12 aspect-video w-full overflow-hidden rounded-xl border border-neutral-800">
-          <img
+        <div className="mt-8 md:mt-12 aspect-video w-full overflow-hidden rounded-xl border border-neutral-800 relative">
+          <Image
             src="/images/kouseido.jpeg"
             alt="AI Model Engineering Lab"
-            className="h-full w-full object-cover"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 800px"
+            priority
           />
         </div>
 
@@ -123,7 +197,8 @@ export default function ModelEngineeringPage() {
       </div>
 
       <PricingSection type="consult" />
-      <FAQSection />
-    </main>
+      <PricingSection type="consult" />
+      <FAQSection items={faqs} />
+    </div>
   );
 }

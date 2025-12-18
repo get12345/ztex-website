@@ -7,7 +7,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqs = [
+export type FAQItem = {
+  question: string;
+  answer: string;
+};
+
+export const DEFAULT_FAQS: FAQItem[] = [
   {
     question: "まだAIで何ができるか具体的になっていませんが、相談しても良いですか？",
     answer:
@@ -50,7 +55,11 @@ const faqs = [
   },
 ];
 
-export function FAQSection() {
+type FAQSectionProps = {
+  items?: FAQItem[];
+};
+
+export function FAQSection({ items = DEFAULT_FAQS }: FAQSectionProps) {
   return (
     <section className="border-b border-neutral-900/80 bg-black">
       <div className="section-inner py-20 md:py-28">
@@ -66,7 +75,7 @@ export function FAQSection() {
 
         <div className="mx-auto max-w-3xl">
           <Accordion type="single" collapsible className="w-full space-y-4">
-            {faqs.map((faq, idx) => (
+            {items.map((faq, idx) => (
               <AccordionItem
                 key={idx}
                 value={`item-${idx}`}

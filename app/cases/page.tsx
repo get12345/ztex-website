@@ -1,10 +1,16 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import { casesData } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 
+export const metadata: Metadata = {
+    title: "導入事例 | 株式会社ZTEX",
+    description: "ZTEXによるAI導入、業務自動化、生成AI活用の実績をご紹介します。",
+};
+
 export default function CasesPage() {
     return (
-        <main className="min-h-screen bg-black pt-24 pb-20">
+        <div className="min-h-screen bg-black pt-24 pb-20">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="mb-16 text-center">
                     <h1 className="mb-4 text-3xl font-bold text-white md:text-4xl">
@@ -57,6 +63,6 @@ export default function CasesPage() {
                     ))}
                 </div>
             </div>
-        </main>
+        </div>
     );
 }

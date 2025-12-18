@@ -1,9 +1,91 @@
+import { Metadata } from "next";
+import Image from "next/image";
 import { PricingSection } from "@/components/pricing-section";
 import { FAQSection } from "@/components/faq-section";
 
+export const metadata: Metadata = {
+  title: "業務フロー自動化・効率化支援 | 株式会社ZTEX",
+  description: "API連携やノーコードツールを活用し、手作業に依存した事務処理や反復業務を自動化。利益率の高い組織体制を構築します。",
+};
+
+const faqs = [
+  {
+    question: "レガシーな基幹システム（オンプレミス）とも連携できますか？",
+    answer: "はい、可能です。APIがない古いシステムでも、RPA技術による画面操作や、CSVファイルの自動入出力などを組み合わせることで連携を実現します。",
+  },
+  {
+    question: "自動化フローでエラーが起きた場合はどうなりますか？",
+    answer: "設計段階でエラーハンドリングを組み込みます。エラー発生時には即座に担当者のSlack/Teamsへ通知が飛び、どの処理で止まったかが分かるように構築するため、迅速な復旧が可能です。",
+  },
+  {
+    question: "セキュリティポリシーが厳しく、外部クラウドツールを使えないのですが。",
+    answer: "問題ございません。イントラネット内で完結するオンプレミス版のn8n構築や、Pythonスクリプトによるローカル自動化など、貴社のセキュリティ基準に合わせたアーキテクチャをご提案します。",
+  },
+  {
+    question: "担当者が退職しても運用できますか？",
+    answer: "はい。属人化を防ぐため、処理フローの可視化ドキュメントを作成し、納品時に引き継ぎを行います。また、保守サポート契約をいただければ、トラブル時の対応や仕様変更も弊社が代行いたします。",
+  },
+];
+
 export default function AutomationPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "業務フロー自動化・効率化支援",
+    provider: {
+      "@type": "Organization",
+      name: "株式会社ZTEX",
+      url: "https://ztex-japan.com",
+    },
+    description: "API連携やノーコードツールを活用し、手作業に依存した事務処理や反復業務を自動化。利益率の高い組織体制を構築します。",
+    areaServed: "JP",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Automation Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "営業リード対応自動化"
+          }
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "経理・請求フロー効率化"
+          }
+        }
+      ]
+    }
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.answer,
+      },
+    })),
+  };
+
   return (
-    <main className="min-h-screen bg-black text-neutral-50">
+    <div className="min-h-screen bg-black text-neutral-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
+      {/* ... (rest of the content) */}
       <div className="section-inner py-16 md:py-20">
         <p className="section-eyebrow">SERVICE 01 — AI AUTOMATION DESIGN</p>
 
@@ -16,11 +98,14 @@ export default function AutomationPage() {
           現場のワークフローに合わせた設計を行うため、「動かない自動化」にはしません。
         </p>
 
-        <div className="mt-8 md:mt-12 aspect-video w-full overflow-hidden rounded-xl border border-neutral-800">
-          <img
+        <div className="mt-8 md:mt-12 aspect-video w-full overflow-hidden rounded-xl border border-neutral-800 relative">
+          <Image
             src="/images/jidouka.jpeg"
             alt="AI Automation Design"
-            className="h-full w-full object-cover"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 800px"
+            priority
           />
         </div>
 
@@ -34,10 +119,6 @@ export default function AutomationPage() {
               <li className="flex items-start gap-2">
                 <span className="mt-1.5 block h-1 w-1 rounded-full bg-neutral-600" />
                 各種フォームからの問い合わせ内容を自動でスプレッドシートへ集約
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1.5 block h-1 w-1 rounded-full bg-neutral-600" />
-                見積依頼 → 社内チャット → 顧客への一次返信までを自動化
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1.5 block h-1 w-1 rounded-full bg-neutral-600" />
@@ -122,7 +203,7 @@ export default function AutomationPage() {
       </div>
 
       <PricingSection type="consult" />
-      <FAQSection />
-    </main>
+      <FAQSection items={faqs} />
+    </div>
   );
 }
