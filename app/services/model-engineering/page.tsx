@@ -197,7 +197,6 @@ export default function ModelEngineeringPage() {
       </div>
 
       <PricingSection type="consult" />
-      <PricingSection type="consult" />
       <FAQSection items={faqs} />
     </div>
   );

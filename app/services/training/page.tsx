@@ -204,8 +204,6 @@ export default function TrainingPage() {
 
       {/* 下：このプログラム専用のプラン & FAQ */}
       <PricingSection />
-      <PricingSection />
-      <PricingSection />
       <FAQSection items={faqs} />
     </div>
   );
