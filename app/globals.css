@@ -158,7 +158,7 @@
   }
 }
 
-/* === ZTEX base styles === */
+/* === SOFT FRAME base styles === */
 @layer base {
   body {
     @apply bg-black text-white antialiased;

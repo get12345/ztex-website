@@ -18,7 +18,7 @@ export function Hero() {
         <div className="section-inner flex min-h-[calc(100vh-3.5rem)] items-center py-14 md:py-20">
           <div className="max-w-xl space-y-7 md:space-y-8">
             <p className="text-xs font-medium tracking-[0.35em] text-neutral-500">
-              ZTEX
+              SOFT FRAME
             </p>
 
             <h1 className="text-3xl font-semibold leading-tight text-white sm:text-4xl md:text-5xl">
