@@ -36,7 +36,7 @@ export async function submitContact(formData: FormData) {
     return { success: false, error: "セキュリティ検証中にエラーが発生しました。" };
   }
 
-  console.log("SOFT FRAME contact:", { name, email, phone, category, message });
+  console.log("ZTEX contact:", { name, email, phone, category, message });
   console.log("Env check:", {
     user: process.env.GMAIL_USER ? "Set" : "Not Set",
     pass: process.env.GMAIL_APP_PASSWORD ? "Set" : "Not Set"

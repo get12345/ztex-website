@@ -30,8 +30,16 @@ export default function ContactForm() {
 
         try {
             // reCAPTCHA トークン取得
+            const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+            if (!siteKey) {
+                console.error("reCAPTCHA site key is missing");
+                setError("システムエラー: reCAPTCHAの設定が正しくありません。");
+                setIsSubmitting(false);
+                return;
+            }
+
             // @ts-ignore
-            const token = await window.grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, { action: 'submit_contact' });
+            const token = await window.grecaptcha.execute(siteKey, { action: 'submit_contact' });
             formData.append("recaptchaToken", token);
 
             const result = await submitContact(formData);
@@ -42,8 +50,8 @@ export default function ContactForm() {
                 setError("送信に失敗しました。時間をおいて再度お試しください。");
             }
         } catch (error) {
-            console.error(error);
-            setError("予期せぬエラーが発生しました。");
+            console.error("Submission error:", error);
+            setError("予期せぬエラーが発生しました。ネットワーク環境をご確認の上、再度お試しください。");
         } finally {
             setIsSubmitting(false);
         }
