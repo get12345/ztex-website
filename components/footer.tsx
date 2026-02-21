@@ -19,6 +19,12 @@ export function Footer() {
         {/* 右側：各種リンク */}
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
           <Link
+            href="/blog"
+            className="text-[11px] text-neutral-400 hover:text-neutral-100 transition-colors"
+          >
+            ブログ
+          </Link>
+          <Link
             href="/company"
             className="text-[11px] text-neutral-400 hover:text-neutral-100 transition-colors"
           >

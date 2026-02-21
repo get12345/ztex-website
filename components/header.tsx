@@ -29,6 +29,7 @@ const serviceLinks = [
 
 const navItems = [
   { href: "/cases", label: "CASES" },
+  { href: "/blog", label: "BLOG" },
   { href: "/news", label: "NEWS" },
   { href: "/company", label: "COMPANY" },
   { href: "/recruit", label: "RECRUIT" },
