@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   description:
     "AI導入・AXコンサルティングの株式会社ZTEX（ジーテックス）。業務自動化から高度AI実装、AI人材育成まで、経営課題を解決する「実利ある技術」を提供します。仙台・宮城から全国対応。",
-  keywords: ["AI導入", "AXコンサルティング", "業務自動化", "DX", "AI研修", "株式会社ZTEX", "ジーテックス"],
+  keywords: ["AI導入", "AXコンサルティング", "業務自動化", "DX", "AI研修", "AIエージェント", "仙台", "宮城", "東北", "株式会社ZTEX", "ジーテックス"],
 };
 
 const jsonLd = {
@@ -48,6 +48,8 @@ const jsonLd = {
     "Digital Transformation",
     "AX (AI Transformation)",
     "LLM Engineering",
+    "Autonomous AI Agent",
+    "n8n Workflow Automation",
   ],
 };
 

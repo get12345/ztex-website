@@ -86,6 +86,7 @@ export function ServicesSection() {
                   src={service.image}
                   alt={service.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover opacity-80 transition-opacity group-hover:opacity-100"
                 />
               </div>

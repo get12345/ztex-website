@@ -8,10 +8,72 @@ export const metadata: Metadata = {
   description: "最新の生成AI技術を駆使し、高品質なクリエイティブを迅速に制作。動画、画像、SNSコンテンツなど、広報・販促コストを抑えつつ認知拡大を支援します。",
 };
 
+const faqs = [
+  {
+    question: "AI生成のクリエイティブは著作権的に問題ありませんか？",
+    answer: "生成AIの出力物に関する著作権リスクは、利用するモデルや用途によって異なります。弊社では、商用利用に適したモデルとライセンスを選定し、リスクが最小化される制作フローを設計・ご提案しています。",
+  },
+  {
+    question: "完全にAIだけで制作が完結しますか？",
+    answer: "いいえ。現時点でのAI生成物は、そのまま使うと品質にばらつきが出る場合があります。弊社ではAI生成を「量産の土台」として活用し、プロの目による最終調整・ブランドガイドラインへの適合チェックを行うことで、品質を担保しています。",
+  },
+  {
+    question: "社内にデザイナーがいなくても大丈夫ですか？",
+    answer: "はい、大丈夫です。コンセプト企画から最終納品まで一気通貫でサポートいたします。「こういう雰囲気にしたい」というイメージや参考URLをいただければ、そこからAIを活用してビジュアル方向性を複数パターンご提案します。",
+  },
+  {
+    question: "動画制作の場合、納品までどれくらいかかりますか？",
+    answer: "ショート動画（15〜60秒）であれば、企画確定から最短1週間程度で納品可能です。AI活用により、従来の制作フローに比べて大幅な時間短縮を実現しています。ブランドムービーなど長尺の場合は、規模に応じて2〜4週間程度です。",
+  },
+];
+
 export default function CreativeIntelligencePage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "生成AI活用ブランディング・制作",
+    provider: {
+      "@type": "Organization",
+      name: "株式会社ZTEX",
+      url: "https://ztex-japan.com",
+    },
+    description: "最新の生成AI技術を駆使し、高品質なクリエイティブを迅速に制作。広報・販促コストを抑えつつ認知拡大を支援します。",
+    areaServed: "JP",
+    serviceType: "AI Creative Production",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Creative Intelligence Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "SNSショート動画制作" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "広告クリエイティブ生成" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "ブランドムービー制作" } },
+      ],
+    },
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.answer,
+      },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-black text-neutral-50">
-      {/* ... (rest of the content) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="section-inner py-16 md:py-20">
         <p className="section-eyebrow">
           SERVICE 04 — AI CREATIVE INTELLIGENCE STUDIO
@@ -134,7 +196,7 @@ export default function CreativeIntelligencePage() {
       </div>
 
       <PricingSection type="consult" />
-      <FAQSection />
+      <FAQSection items={faqs} />
     </div>
   );
 }
