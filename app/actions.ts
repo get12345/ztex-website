@@ -7,12 +7,39 @@ import nodemailer from "nodemailer";
  * お問い合わせフォームのデータを受け取る Server Action
  */
 export async function submitContact(formData: FormData) {
-  const name = formData.get("name") as string;
-  const email = formData.get("email") as string;
-  const phone = formData.get("phone") as string;
-  const category = formData.get("category") as string;
-  const message = formData.get("message") as string;
+  const name = (formData.get("name") as string || "").trim();
+  const email = (formData.get("email") as string || "").trim();
+  const phone = (formData.get("phone") as string || "").trim();
+  const category = (formData.get("category") as string || "").trim();
+  const message = (formData.get("message") as string || "").trim();
   const recaptchaToken = formData.get("recaptchaToken") as string;
+
+  // === サーバー側バリデーション ===
+  if (!name || !email || !category || !message) {
+    return { success: false, error: "必須項目が入力されていません。" };
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return { success: false, error: "メールアドレスの形式が正しくありません。" };
+  }
+
+  if (name.length > 100) {
+    return { success: false, error: "お名前が長すぎます（100文字以内）。" };
+  }
+  if (email.length > 254) {
+    return { success: false, error: "メールアドレスが長すぎます。" };
+  }
+  if (phone && phone.length > 20) {
+    return { success: false, error: "電話番号が長すぎます。" };
+  }
+  if (message.length > 5000) {
+    return { success: false, error: "お問い合わせ内容が長すぎます（5000文字以内）。" };
+  }
+
+  const validCategories = ["service", "recruit", "media", "partnership", "other"];
+  if (!validCategories.includes(category)) {
+    return { success: false, error: "不正なお問い合わせ種別です。" };
+  }
 
   // reCAPTCHA 検証
   if (!recaptchaToken) {

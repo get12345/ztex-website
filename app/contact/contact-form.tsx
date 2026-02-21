@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,16 +15,28 @@ import { Label } from "@/components/ui/label";
 import { submitContact } from "@/app/actions";
 import Script from "next/script";
 
+const SUBMIT_COOLDOWN_MS = 30_000; // 30秒間の連続送信防止
+
 export default function ContactForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const [error, setError] = useState<string | null>(null);
+    const lastSubmitRef = useRef<number>(0);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
         setError(null);
+
+        // 連続送信防止（クライアント側レート制限）
+        const now = Date.now();
+        if (now - lastSubmitRef.current < SUBMIT_COOLDOWN_MS) {
+            setError("送信の間隔が短すぎます。しばらくしてから再度お試しください。");
+            setIsSubmitting(false);
+            return;
+        }
+        lastSubmitRef.current = now;
 
         const formData = new FormData(e.currentTarget);
 
