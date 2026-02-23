@@ -6,6 +6,11 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "採用情報 | 株式会社ZTEX",
   description: "株式会社ZTEXでは、AIと自動化の力で「自由に生きられる世界」を創る仲間を募集しています。セールス、エンジニア、アシスタントの募集要項はこちら。",
+  keywords: ["ZTEX採用", "AI企業求人", "仙台求人", "エンジニア募集", "AIエンジニア"],
+  openGraph: {
+    title: "採用情報 | 株式会社ZTEX",
+    description: "AIと自動化の力で「自由に生きられる世界」を創る仲間を募集しています。",
+  },
 };
 
 export default function RecruitPage() {

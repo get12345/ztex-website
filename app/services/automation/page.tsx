@@ -6,6 +6,11 @@ import { FAQSection } from "@/components/faq-section";
 export const metadata: Metadata = {
   title: "業務フロー自動化・効率化支援 | 株式会社ZTEX",
   description: "API連携やノーコードツールを活用し、手作業に依存した事務処理や反復業務を自動化。利益率の高い組織体制を構築します。",
+  keywords: ["業務自動化", "ノーコード", "n8n", "API連携", "RPA", "仙台", "効率化"],
+  openGraph: {
+    title: "業務フロー自動化・効率化支援 | 株式会社ZTEX",
+    description: "API連携やノーコードツールを活用し、手作業に依存した反復業務を自動化。利益率の高い組織体制を構築します。",
+  },
 };
 
 const faqs = [

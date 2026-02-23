@@ -6,6 +6,11 @@ import { Badge } from "@/components/ui/badge";
 export const metadata: Metadata = {
     title: "導入事例 | 株式会社ZTEX",
     description: "ZTEXによるAI導入、業務自動化、生成AI活用の実績をご紹介します。",
+    keywords: ["AI導入事例", "業務自動化事例", "生成AI活用", "導入実績", "仙台"],
+    openGraph: {
+        title: "導入事例 | 株式会社ZTEX",
+        description: "ZTEXによるAI導入、業務自動化、生成AI活用の実績をご紹介します。",
+    },
 };
 
 export default function CasesPage() {

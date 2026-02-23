@@ -6,6 +6,11 @@ import { FAQSection } from "@/components/faq-section";
 export const metadata: Metadata = {
   title: "生成AI活用ブランディング・制作 | 株式会社ZTEX",
   description: "最新の生成AI技術を駆使し、高品質なクリエイティブを迅速に制作。動画、画像、SNSコンテンツなど、広報・販促コストを抑えつつ認知拡大を支援します。",
+  keywords: ["生成AI", "AI動画", "AIクリエイティブ", "SNS運用", "ブランディング", "仙台", "動画制作"],
+  openGraph: {
+    title: "生成AI活用ブランディング・制作 | 株式会社ZTEX",
+    description: "生成AI技術で高品質クリエイティブを迅速制作。広報・販促コストを抑えつつ認知拡大を支援します。",
+  },
 };
 
 const faqs = [

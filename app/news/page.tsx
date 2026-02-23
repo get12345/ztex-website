@@ -7,6 +7,10 @@ import { ArrowLeft } from "lucide-react";
 export const metadata: Metadata = {
     title: "お知らせ | 株式会社ZTEX",
     description: "株式会社ZTEXの最新ニュース、プレスリリース、休業案内などのお知らせ一覧です。",
+    openGraph: {
+        title: "お知らせ | 株式会社ZTEX",
+        description: "株式会社ZTEXの最新ニュース、プレスリリース、休業案内などのお知らせ一覧です。",
+    },
 };
 
 export default function NewsPage() {

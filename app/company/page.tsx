@@ -3,6 +3,11 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "会社概要 | 株式会社ZTEX",
   description: "株式会社ZTEX（ジーテックス）の会社概要。所在地、設立日、事業内容などについてご紹介します。",
+  keywords: ["株式会社ZTEX", "会社概要", "仙台", "AI企業", "宮城"],
+  openGraph: {
+    title: "会社概要 | 株式会社ZTEX",
+    description: "株式会社ZTEX（ジーテックス）の会社概要。所在地、設立日、事業内容をご紹介します。",
+  },
 };
 
 export default function CompanyPage() {

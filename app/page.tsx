@@ -12,7 +12,12 @@ import { ScrollAnimation } from "@/components/ui/scroll-animation";
 
 export const metadata: Metadata = {
   title: "株式会社ZTEX | 技術を経営の確かな推進力に。",
-  description: "AI導入・AXコンサルティングの株式会社ZTEX（ジーテックス）。業務自動化から高度AI実装、AI人材育成まで、経営課題を解決する「実利ある技術」を提供します。",
+  description: "AI導入・AXコンサルティングの株式会社ZTEX（ジーテックス）。業務自動化から高度AI実装、AI人材育成まで、経営課題を解決する「実利ある技術」を提供します。仙台・宮城から全国対応。",
+  keywords: ["AI導入", "仙台", "宮城", "AXコンサルティング", "業務自動化", "AIエージェント", "DX推進", "n8n"],
+  openGraph: {
+    title: "株式会社ZTEX | 技術を経営の確かな推進力に。",
+    description: "AI導入・AXコンサルティングの株式会社ZTEX。業務自動化から高度AI実装まで。仙台・宮城から全国対応。",
+  },
 };
 
 export default function Page() {

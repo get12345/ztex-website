@@ -6,6 +6,11 @@ import { FAQSection } from "@/components/faq-section";
 export const metadata: Metadata = {
   title: "高度AI導入・技術顧問 | 株式会社ZTEX",
   description: "LLMの専門的知見に基づき、貴社独自のAI環境を構築。モデルのチューニングやRAG構成の改善により、ビジネス特化の高精度なAIを実現します。",
+  keywords: ["LLM", "RAG", "ファインチューニング", "AI技術顧問", "GPT", "生成AI", "仙台"],
+  openGraph: {
+    title: "高度AI導入・技術顧問 | 株式会社ZTEX",
+    description: "LLMの専門的知見に基づき、貴社独自のAI環境を構築。ビジネス特化の高精度なAIを実現します。",
+  },
 };
 
 const faqs = [

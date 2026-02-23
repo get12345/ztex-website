@@ -9,6 +9,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ztex-japan.com"),
   title: {
     default: "株式会社ZTEX | 技術を経営の確かな推進力に。",
     template: "%s | 株式会社ZTEX",
@@ -16,6 +17,20 @@ export const metadata: Metadata = {
   description:
     "AI導入・AXコンサルティングの株式会社ZTEX（ジーテックス）。業務自動化から高度AI実装、AI人材育成まで、経営課題を解決する「実利ある技術」を提供します。仙台・宮城から全国対応。",
   keywords: ["AI導入", "AXコンサルティング", "業務自動化", "DX", "AI研修", "AIエージェント", "仙台", "宮城", "東北", "株式会社ZTEX", "ジーテックス"],
+  openGraph: {
+    type: "website",
+    locale: "ja_JP",
+    siteName: "株式会社ZTEX",
+    title: "株式会社ZTEX | 技術を経営の確かな推進力に。",
+    description: "AI導入・AXコンサルティングの株式会社ZTEX（ジーテックス）。業務自動化から高度AI実装、AI人材育成まで、経営課題を解決する「実利ある技術」を提供します。仙台・宮城から全国対応。",
+    images: [{ url: "/images/og-image.png", width: 1200, height: 630, alt: "株式会社ZTEX" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "株式会社ZTEX | 技術を経営の確かな推進力に。",
+    description: "AI導入・AXコンサルティングの株式会社ZTEX。業務自動化から高度AI実装まで。仙台・宮城から全国対応。",
+    images: ["/images/og-image.png"],
+  },
 };
 
 const jsonLd = {
