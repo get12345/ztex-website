@@ -22,7 +22,6 @@ export async function GET() {
 - 会社名: 株式会社ZTEX（ジーテックス / ZTEX Inc.）
 - 所在地: 宮城県仙台市宮城野区福室2丁目8番17号 福室マンション314号
 - 設立: 2023年3月7日
-- 代表: 佐藤 啓之
 - 公式サイト: https://ztex-japan.com
 - お問い合わせ: info@ztex-japan.com
 
