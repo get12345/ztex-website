@@ -3,6 +3,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "プライバシーポリシー | 株式会社ZTEX",
     description: "株式会社ZTEXの個人情報保護方針（プライバシーポリシー）についてのご案内です。",
+    alternates: {
+        canonical: "/legal/privacy",
+    },
 };
 
 export default function PrivacyPage() {

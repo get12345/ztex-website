@@ -11,6 +11,9 @@ export const metadata: Metadata = {
         title: "お知らせ | 株式会社ZTEX",
         description: "株式会社ZTEXの最新ニュース、プレスリリース、休業案内などのお知らせ一覧です。",
     },
+    alternates: {
+        canonical: "/news",
+    },
 };
 
 export default function NewsPage() {

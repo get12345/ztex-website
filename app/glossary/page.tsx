@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     title: "AI/AX用語集 | 株式会社ZTEX",
     description:
         "AIトランスフォーメーション（AX）、RAG、エージェントAIなど、最新のAI技術に関する専門用語をわかりやすく解説します。",
+    alternates: {
+        canonical: "/glossary",
+    },
 };
 
 export default function GlossaryPage() {

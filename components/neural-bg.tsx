@@ -3,6 +3,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -36,7 +37,7 @@ export function Hero() {
                 asChild
                 className="rounded-full bg-neutral-50 px-6 text-xs font-semibold text-neutral-950 hover:bg-white"
               >
-                <a href="#contact">まずは無料で相談する</a>
+                <Link href="#contact">まずは無料で相談する</Link>
               </Button>
 
               <Button
@@ -44,7 +45,7 @@ export function Hero() {
                 variant="outline"
                 className="rounded-full border-neutral-600/70 bg-transparent px-6 text-xs text-neutral-100 hover:bg-neutral-900"
               >
-                <a href="#services">できることを見る</a>
+                <Link href="#services">できることを見る</Link>
               </Button>
             </div>
 

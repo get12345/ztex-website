@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     title: "AI人材育成・内製化支援 | 株式会社ZTEX",
     description: "現場社員がAIを使いこなせる状態まで伴走。「自走できる組織」への変革を支援します。",
   },
+    alternates: {
+        canonical: "/services/training",
+    },
 };
 
 const faqs = [

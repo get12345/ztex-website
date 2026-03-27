@@ -2,7 +2,7 @@
 
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
 import { casesData } from "@/lib/data";
@@ -10,12 +10,6 @@ import { casesData } from "@/lib/data";
 
 export function CasesSection() {
   const scrollerRef = useRef<HTMLDivElement>(null);
-  const [start, setStart] = useState(false);
-
-  useEffect(() => {
-    if (!scrollerRef.current) return;
-    setStart(true);
-  }, []);
 
   return (
     <section id="cases" className="border-b border-neutral-900/80 overflow-hidden">
@@ -65,6 +59,7 @@ export function CasesSection() {
                     src={item.image}
                     alt={item.title}
                     fill
+                    sizes="(max-width: 768px) 85vw, 400px"
                     className="object-cover opacity-80 transition-opacity hover:opacity-100"
                   />
                 </div>
@@ -97,6 +92,7 @@ export function CasesSection() {
                     src={item.image}
                     alt={item.title}
                     fill
+                    sizes="(max-width: 768px) 85vw, 400px"
                     className="object-cover opacity-80 transition-opacity hover:opacity-100"
                   />
                 </div>

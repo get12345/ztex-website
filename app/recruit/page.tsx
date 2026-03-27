@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     title: "採用情報 | 株式会社ZTEX",
     description: "AIと自動化の力で「自由に生きられる世界」を創る仲間を募集しています。",
   },
+    alternates: {
+        canonical: "/recruit",
+    },
 };
 
 export default function RecruitPage() {

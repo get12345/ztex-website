@@ -23,6 +23,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             title: `${term.term}の意味とは？ | 株式会社ZTEX`,
             description: term.definition,
         },
+        alternates: {
+            canonical: `/glossary/${term.slug}`,
+        },
     };
 }
 

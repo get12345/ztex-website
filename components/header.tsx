@@ -5,38 +5,40 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-const serviceLinks = [
-  {
-    href: "/services/automation",
-    label: "業務フロー自動化・効率化支援",
-  },
-  {
-    href: "/services/training",
-    label: "AI人材育成・内製化支援",
-  },
-  {
-    href: "/services/model-engineering",
-    label: "高度AI導入・技術顧問",
-  },
-  {
-    href: "/services/creative-intelligence",
-    label: "生成AI活用ブランディング・制作",
-  },
+const industryLinks = [
+  { href: "/industry/construction", label: "建設業向け" },
+  { href: "/industry/manufacturing", label: "製造業向け" },
+];
+
+const taskLinks = [
+  { href: "/task/sales-marketing", label: "営業・マーケティング" },
+  { href: "/task/back-office", label: "事務・バックオフィス" },
+  { href: "/task/hr", label: "採用・人事・労務" },
+  { href: "/task/field-management", label: "現場・プロジェクト管理" },
+];
+
+const companyLinks = [
+  { href: "/company/philosophy", label: "企業理念" },
+  { href: "/company/message", label: "代表挨拶" },
+  { href: "/company", label: "会社概要" },
 ];
 
 // ホーム + ハッシュ でどのページからでもTOPに戻れるようにする
 // components/header.tsx の navItems 部分だけ修正
 
-const navItems = [
+const navItems1 = [
   { href: "/cases", label: "CASES" },
   { href: "/blog", label: "BLOG" },
   { href: "/news", label: "NEWS" },
-  { href: "/company", label: "COMPANY" },
+];
+
+const navItems2 = [
   { href: "/recruit", label: "RECRUIT" },
 ];
 export function Header() {
   const [open, setOpen] = useState(false); // モバイル全体メニュー
   const [isServicesOpen, setIsServicesOpen] = useState(false); // サービスドロップダウン
+  const [isCompanyOpen, setIsCompanyOpen] = useState(false); // 会社情報ドロップダウン
 
   return (
     <header className="sticky top-0 z-40 border-b border-neutral-900/80 bg-black/70 backdrop-blur-md">
@@ -69,36 +71,108 @@ export function Header() {
               <button
                 type="button"
                 className="inline-flex items-center gap-1 text-[13px] text-neutral-300 hover:text-neutral-50 transition-colors"
+                aria-haspopup="true"
+                aria-expanded={isServicesOpen}
               >
                 SERVICES
-                <span className="text-xs text-neutral-500">▾</span>
+                <span className="text-xs text-neutral-500" aria-hidden="true">▾</span>
               </button>
 
               {/* ボタンのすぐ下から少し余白をつけてドロップダウンを出す */}
               <div
                 className={`
-        absolute right-0 top-full z-50 pt-2
+        absolute left-1/2 -translate-x-1/2 top-full z-50 pt-3
         transition-all duration-150
-        ${isServicesOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"}
+        ${isServicesOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}
       `}
               >
-                <div className="w-64 rounded-xl border border-neutral-800 bg-black/95 shadow-xl shadow-black/70">
-                  <div className="flex flex-col py-2">
-                    {serviceLinks.map((item) => (
+                <div className="w-[520px] rounded-xl border border-neutral-800 bg-black/95 shadow-xl shadow-black/80 flex p-3">
+                  <div className="w-1/3 flex flex-col border-r border-neutral-800 pr-3">
+                    <p className="px-3 py-1.5 text-[11px] font-semibold tracking-wider text-neutral-500">INDUSTRY</p>
+                    {industryLinks.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="px-4 py-2.5 text-sm text-neutral-200 hover:bg-neutral-900"
+                        className="rounded-md px-3 py-2.5 text-xs text-neutral-200 hover:bg-neutral-900 transition-colors"
                       >
                         {item.label}
                       </Link>
                     ))}
                   </div>
+                  <div className="w-1/3 flex flex-col border-r border-neutral-800 px-3">
+                    <p className="px-3 py-1.5 text-[11px] font-semibold tracking-wider text-neutral-500">TASK</p>
+                    {taskLinks.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="rounded-md px-3 py-2.5 text-xs text-neutral-200 hover:bg-neutral-900 transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="w-1/3 flex flex-col pl-3">
+                    <p className="px-3 py-1.5 text-[11px] font-semibold tracking-wider text-neutral-500">TRAINING</p>
+                    <Link
+                      href="/services/training"
+                      className="rounded-md px-3 py-2.5 text-xs text-neutral-200 hover:bg-neutral-900 transition-colors"
+                    >
+                      AI教育研修
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-            {/* その他メニュー */}
-            {navItems.map((item) => (
+            {navItems1.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="hover:text-neutral-50 transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+
+            {/* ▼ 会社情報 ドロップダウン */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsCompanyOpen(true)}
+              onMouseLeave={() => setIsCompanyOpen(false)}
+            >
+              <button 
+                type="button" 
+                className="inline-flex items-center gap-1 text-[13px] text-neutral-300 hover:text-neutral-50 transition-colors"
+                aria-haspopup="true"
+                aria-expanded={isCompanyOpen}
+              >
+                COMPANY
+                <span className="text-xs text-neutral-500" aria-hidden="true">▾</span>
+              </button>
+
+              {/* ボタンのすぐ下から少し余白をつけてドロップダウンを出す */}
+              <div
+                className={`
+        absolute left-1/2 -translate-x-1/2 top-full z-50 pt-3
+        transition-all duration-150
+        ${isCompanyOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}
+      `}
+              >
+                <div className="w-40 rounded-xl border border-neutral-800 bg-black/95 shadow-xl shadow-black/80 flex flex-col p-2">
+                  {companyLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="rounded-md px-3 py-2 text-xs text-neutral-200 hover:bg-neutral-900 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* その他メニュー 後半 */}
+            {navItems2.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -122,7 +196,8 @@ export function Header() {
           <button
             className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral-700 md:hidden"
             onClick={() => setOpen((v) => !v)}
-            aria-label="メニューを開く"
+            aria-label={open ? "メニューを閉じる" : "メニューを開く"}
+            aria-expanded={open}
           >
             <span className="flex flex-col items-center justify-center gap-[3px]">
               <span className="block h-[1.5px] w-4 rounded-full bg-neutral-100" />
@@ -146,12 +221,54 @@ export function Header() {
               TOP
             </Link>
 
-            {/* Services */}
-            <p className="mt-1 text-[11px] font-medium text-neutral-500">
-              SERVICES
+            {/* Services (Industry & Task & Training) */}
+            <p className="mt-2 text-[11px] font-medium text-neutral-500">
+              INDUSTRY
             </p>
-            <div className="mt-1 flex flex-col gap-1">
-              {serviceLinks.map((item) => (
+            <div className="mt-1 flex flex-col gap-1 pl-2 border-l border-neutral-800">
+              {industryLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="py-1.5 text-[13px]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+
+            <p className="mt-3 text-[11px] font-medium text-neutral-500">
+              TASK
+            </p>
+            <div className="mt-1 flex flex-col gap-1 pl-2 border-l border-neutral-800">
+              {taskLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="py-1.5 text-[13px]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+
+            <p className="mt-3 text-[11px] font-medium text-neutral-500">
+              TRAINING
+            </p>
+            <div className="mt-1 flex flex-col gap-1 pl-2 border-l border-neutral-800">
+              <Link
+                href="/services/training"
+                onClick={() => setOpen(false)}
+                className="py-1.5 text-[13px]"
+              >
+                AI教育研修
+              </Link>
+            </div>
+
+            <div className="mt-3 flex flex-col gap-1">
+              {navItems1.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -163,9 +280,26 @@ export function Header() {
               ))}
             </div>
 
-            {/* その他ナビ */}
+            {/* Company */}
+            <p className="mt-3 text-[11px] font-medium text-neutral-500">
+              COMPANY
+            </p>
+            <div className="mt-1 flex flex-col gap-1 pl-2 border-l border-neutral-800">
+              {companyLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="py-1.5 text-[13px]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+
+            {/* その他ナビ 後半 */}
             <div className="mt-3 flex flex-col gap-1">
-              {navItems.map((item) => (
+              {navItems2.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}

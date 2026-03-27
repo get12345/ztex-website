@@ -13,8 +13,8 @@ export function ContactSection() {
               CONTACT
             </h2>
             <p className="text-neutral-400 md:text-lg">
-              AI導入、業務自動化、Web制作など<br />
-              お気軽にご相談ください。
+              建設・製造業の現場を変える第一歩。<br />
+              まずはお気軽にご相談ください。
             </p>
           </div>
 

@@ -50,7 +50,7 @@ export default function ContactForm() {
                 return;
             }
 
-            // @ts-ignore
+            // @ts-expect-error - grecaptcha is loaded via external script
             const token = await window.grecaptcha.execute(siteKey, { action: 'submit_contact' });
             formData.append("recaptchaToken", token);
 

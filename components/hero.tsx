@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { newsItems } from "@/lib/data";
 
@@ -191,19 +192,34 @@ export function Hero() {
             企業の持続的な成長を支える技術パートナーです。
           </p>
 
-          {/* News Section */}
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row gap-3 pt-2">
+            <Button
+              asChild
+              className="h-12 rounded-full bg-white px-8 text-sm font-medium text-black transition-all hover:bg-neutral-200 hover:scale-105"
+            >
+              <Link href="/contact">無料相談する</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="h-12 rounded-full border-neutral-600 bg-transparent px-8 text-sm text-neutral-200 hover:bg-neutral-900"
+            >
+              <Link href="#services">ソリューションを見る</Link>
+            </Button>
+          </div>
           <div id="news" className="mt-16 w-full max-w-md rounded-2xl border border-white/10 bg-black/20 p-5 backdrop-blur-sm md:mt-20 md:bg-neutral-950/30 md:backdrop-blur-md">
             <div className="flex items-center justify-between border-b border-white/10 pb-3">
               <span className="text-[10px] font-medium tracking-widest text-neutral-400">NEWS</span>
-              <a href="/news" className="text-[10px] text-neutral-400 hover:text-neutral-200 transition-colors">View All →</a>
+              <Link href="/news" className="text-[10px] text-neutral-400 hover:text-neutral-200 transition-colors">View All →</Link>
             </div>
             <ul className="mt-4 space-y-3">
               {newsItems.slice(0, 3).map((item, i) => (
                 <li key={i} className="group flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-4">
                   <span className="tabular-nums text-xs text-neutral-500 group-hover:text-neutral-400 transition-colors">{item.date}</span>
-                  <a href="/news" className="text-xs text-neutral-300 group-hover:text-white transition-colors line-clamp-1">
+                  <Link href="/news" className="text-xs text-neutral-300 group-hover:text-white transition-colors line-clamp-1">
                     {item.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

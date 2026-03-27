@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+
 
 const technologies = [
     { name: "OpenAI", type: "AI Model" },

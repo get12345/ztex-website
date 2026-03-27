@@ -25,6 +25,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             description: post.description,
             publishedTime: post.date,
         },
+        alternates: {
+            canonical: `https://ztex-japan.com/blog/${post.slug}`,
+        },
     };
 }
 
@@ -211,28 +214,54 @@ export default async function BlogArticlePage({ params }: Props) {
         notFound();
     }
 
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        headline: post.title,
-        description: post.description,
-        datePublished: post.date,
-        author: {
-            "@type": "Organization",
-            name: "株式会社ZTEX",
-            url: "https://ztex-japan.com",
+    const jsonLdData = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.title,
+            description: post.description,
+            datePublished: post.date,
+            author: {
+                "@type": "Organization",
+                name: "株式会社ZTEX",
+                url: "https://ztex-japan.com",
+            },
+            publisher: {
+                "@type": "Organization",
+                name: "株式会社ZTEX",
+                url: "https://ztex-japan.com",
+            },
+            mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": `https://ztex-japan.com/blog/${post.slug}`,
+            },
+            keywords: post.tags.join(", "),
         },
-        publisher: {
-            "@type": "Organization",
-            name: "株式会社ZTEX",
-            url: "https://ztex-japan.com",
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://ztex-japan.com",
+                },
+                {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Blog",
+                    item: "https://ztex-japan.com/blog",
+                },
+                {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: post.title,
+                    item: `https://ztex-japan.com/blog/${post.slug}`,
+                },
+            ],
         },
-        mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": `https://ztex-japan.com/blog/${post.slug}`,
-        },
-        keywords: post.tags.join(", "),
-    };
+    ];
 
     // Related posts (same category, excluding current)
     const relatedPosts = blogPosts
@@ -243,7 +272,7 @@ export default async function BlogArticlePage({ params }: Props) {
         <div className="min-h-screen bg-black text-neutral-50">
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
             />
             <div className="section-inner py-20 md:py-28">
                 <Button

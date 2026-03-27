@@ -11,6 +11,9 @@ export const metadata: Metadata = {
         title: "導入事例 | 株式会社ZTEX",
         description: "ZTEXによるAI導入、業務自動化、生成AI活用の実績をご紹介します。",
     },
+    alternates: {
+        canonical: "/cases",
+    },
 };
 
 export default function CasesPage() {

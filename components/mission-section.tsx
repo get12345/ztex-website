@@ -19,9 +19,9 @@ export function MissionSection() {
           <div>
             <p className="section-eyebrow">MISSION</p>
             <h2 className="section-title">
-              経営課題を解決する、
+              AIの力で日本の中小企業の
               <br />
-              「実利ある技術」の実装を。
+              生産性を最大化する
             </h2>
           </div>
 
@@ -31,9 +31,9 @@ export function MissionSection() {
                 Client First = 現場視点の定着支援
               </h3>
               <p className="section-description">
-                高度な技術も、現場で使われなければ意味がありません。
-                経営層の意図と現場の実情、双方を深く理解し、
-                組織に無理なく浸透する導入プロセスを設計します。
+                宮城を拠点に、全国の中小企業に対し、業務効率化・自動化の支援を行っています。
+                現場に直接足を運び、課題や温度感を正確に把握した上で、
+                費用対効果まで明確にした&quot;実行可能なAI導入&quot;を提供します。
               </p>
             </div>
 

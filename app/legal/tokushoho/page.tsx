@@ -3,6 +3,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "特定商取引法に基づく表記 | 株式会社ZTEX",
     description: "株式会社ZTEXの特定商取引法に基づく表記（販売業者、所在地、配送、支払い等）に関するご案内です。",
+    alternates: {
+        canonical: "/legal/tokushoho",
+    },
 };
 
 export default function TokushohoPage() {

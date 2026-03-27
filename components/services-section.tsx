@@ -6,50 +6,51 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
-const services = [
+const industryServices = [
   {
-    title: "業務フロー自動化・効率化支援",
-    body: "API連携やノーコードツールを活用し、手作業に依存した事務処理や反復業務を自動化。人為的ミスの削減とコスト適正化により、利益率の高い組織体制を構築します。",
-    href: "/services/automation",
-    image: "/images/jidouka.jpeg",
-    features: [
-      "業務フローの可視化・再設計",
-      "ノーコードツールによる自動化実装",
-      "API連携によるツール間接続",
-    ],
+    title: "建設業向けAI自動化",
+    body: "図面からの積算支援、現場写真からの台帳自動生成など、現場監督をパソコン仕事から解放します。",
+    href: "/industry/construction",
+    image: "/images/construction_ai.png",
+    features: ["見積書・図面AI読み取り", "工事写真台帳の自動生成", "社内AIチャットボット"],
   },
   {
-    title: "AI人材育成・内製化支援",
-    body: "一時的なツール導入で終わらせず、現場社員がAIを使いこなせる状態まで伴走。「自走できる組織」への変革を促し、長期的な競争力を高めます。",
-    href: "/services/training",
-    image: "/images/kyouiku.jpeg",
-    features: [
-      "階層別・職種別カリキュラム",
-      "実践的なプロンプトエンジニアリング",
-      "社内ガイドライン策定支援",
-    ],
+    title: "製造業向けAI自動化",
+    body: "アナログなFAX受発注の自動入力や、定年退職するベテラン職人のノウハウ伝承をAIで実現します。",
+    href: "/industry/manufacturing",
+    image: "/images/manufacturing_ai.png",
+    features: ["FAX・PDFのAI-OCR化", "匠の技のRAG化", "過去データの横断検索"],
+  },
+];
+
+const taskServices = [
+  {
+    title: "営業・マーケティング",
+    body: "提案書や見積もりの半自動生成、SNS更新などで「売上を作る」コア業務に集中できる環境を作ります。",
+    href: "/task/sales-marketing",
+    image: "/images/sales_ai.png",
+    features: ["提案書ドラフト生成", "SNS自動運用", "顧客リスト自動抽出"],
   },
   {
-    title: "高度AI導入・技術顧問",
-    body: "大規模言語モデル（LLM）の専門的知見に基づき、貴社独自のAI環境を構築。※RLHF/LoRA等の高度技術も踏まえ、セキュリティと実益を兼ね備えた最適解を提案します。",
-    href: "/services/model-engineering",
-    image: "/images/kouseido.jpeg",
-    features: [
-      "LLMのファインチューニング",
-      "RAG（検索拡張生成）システムの構築",
-      "特化型モデルの検証・開発",
-    ],
+    title: "事務・バックオフィス",
+    body: "紙やPDFの請求書入力、経費精算の自動チェックなど「見えない残業」をゼロにします。",
+    href: "/task/back-office",
+    image: "/images/backoffice_ai.png",
+    features: ["会計システム自動連携", "経費精算自動チェック", "定型メール自動返信"],
   },
   {
-    title: "生成AI活用ブランディング・制作",
-    body: "最新の生成AI技術を駆使し、高品質なクリエイティブを迅速に制作。広報・販促活動におけるコストパフォーマンスを最大化し、認知拡大に貢献します。",
-    href: "/services/creative-intelligence",
-    image: "/images/media.jpeg",
-    features: [
-      "AIによる画像・動画生成",
-      "クリエイティブ制作の効率化",
-      "新規ブランド・IP開発支援",
-    ],
+    title: "採用・労務・人事",
+    body: "個別スカウト文面の生成や面接調整、社内規定FAQ対応など、採用と定着のワークフローを効率化。",
+    href: "/task/hr",
+    image: "/images/hr_ai.png",
+    features: ["スカウト文面自動生成", "面接日程の自動調整", "社内ヘルプデスクAI"],
+  },
+  {
+    title: "現場・プロジェクト管理",
+    body: "LINEからの報告を日報へ自動変換。現場と本社の情報伝達のタイムラグを完全に解消します。",
+    href: "/task/field-management",
+    image: "/images/field_management_ai.png",
+    features: ["LINE報告の自動日報化", "議事録AI自動要約", "遅延検知アラート"],
   },
 ];
 
@@ -57,78 +58,94 @@ export function ServicesSection() {
   return (
     <section id="services" className="border-b border-neutral-900/80">
       <div className="section-inner py-10 md:py-14">
-        <p className="section-eyebrow">SERVICES</p>
+        <p className="section-eyebrow">SOLUTIONS</p>
 
-        <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+        <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end mb-12">
           <h2 className="section-title">
-            AI × AUTOMATION × CREATIVE
+            INDUSTRY & TASK
             <br />
-            未来の業務設計を、いま。
+            業界・業務特化型AI自動化
           </h2>
           <p className="section-description max-w-md">
-            現場の「時間が奪われている場所」を見える化し、
-            自動化・教育・AIモデル高度化・クリエイティブの4軸から
-            最小投資で最大インパクトを生む支援を行います。
+            「AIを導入する」のではなく「現場の悩みを解決する」。
+            業界特有のアナログ課題と、各部門の定型業務をピンポイントで狙い撃ちし、最小投資で最大の効率化を実現します。
           </p>
         </div>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {services.map((service) => (
-            <Card
-              key={service.title}
-              className="flex flex-col overflow-hidden border-neutral-800/80 bg-neutral-950/70 text-neutral-100 
-                         shadow-[0_0_40px_rgba(0,0,0,0.7)]
-                         transition-transform transition-colors
-                         hover:-translate-y-0.5 hover:border-neutral-600/80 hover:bg-neutral-900/80"
-            >
-              <div className="relative h-48 w-full bg-neutral-900">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover opacity-80 transition-opacity group-hover:opacity-100"
-                />
-              </div>
-              <div className="flex flex-1 flex-col p-6">
-                <CardHeader className="p-0 mb-4">
-                  <CardTitle className="text-lg md:text-xl">
-                    {service.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="flex flex-1 flex-col justify-between gap-6 p-0">
-                  <div className="space-y-4">
-                    <p className="text-xs text-neutral-400 md:text-sm">
-                      {service.body}
-                    </p>
-                    <ul className="space-y-1">
-                      {service.features.map((feature) => (
-                        <li
-                          key={feature}
-                          className="flex items-center gap-2 text-[11px] text-neutral-500"
-                        >
-                          <span className="block h-1 w-1 rounded-full bg-neutral-600" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <Button
-                    asChild
-                    variant="link"
-                    className="h-auto w-fit p-0 text-xs text-neutral-300 hover:text-white hover:no-underline group"
-                  >
-                    <Link href={service.href} className="flex items-center gap-1">
-                      View Detail
-                      <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </div>
-            </Card>
-          ))}
+        {/* Industry Section */}
+        <div className="mb-16">
+          <h3 className="text-lg font-semibold text-neutral-200 border-l-4 border-neutral-500 pl-3 mb-6">業界別ソリューション</h3>
+          <div className="grid gap-6 md:grid-cols-2">
+            {industryServices.map((service) => (
+              <Card
+                key={service.title}
+                className="flex flex-col overflow-hidden border-neutral-800/80 bg-neutral-950/70 text-neutral-100 shadow-[0_0_40px_rgba(0,0,0,0.7)] transition-transform hover:-translate-y-0.5 hover:border-neutral-600/80"
+              >
+                <div className="relative h-48 w-full bg-neutral-900">
+                  <Image src={service.image} alt={service.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover opacity-80 transition-opacity hover:opacity-100" />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <CardHeader className="p-0 mb-4">
+                    <CardTitle className="text-lg md:text-xl">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex flex-1 flex-col justify-between gap-6 p-0">
+                    <div className="space-y-4">
+                      <p className="text-xs text-neutral-400 md:text-sm">{service.body}</p>
+                      <ul className="space-y-1">
+                        {service.features.map((feature) => (
+                          <li key={feature} className="flex items-center gap-2 text-[11px] text-neutral-500">
+                            <span className="block h-1 w-1 rounded-full bg-neutral-600" />{feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <Button asChild variant="link" className="h-auto w-fit p-0 text-xs text-neutral-300 hover:text-white group">
+                      <Link href={service.href} className="flex items-center gap-1">View Detail<ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" /></Link>
+                    </Button>
+                  </CardContent>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
+
+        {/* Task Section */}
+        <div>
+          <h3 className="text-lg font-semibold text-neutral-200 border-l-4 border-neutral-500 pl-3 mb-6">業務別ソリューション</h3>
+          <div className="grid gap-6 md:grid-cols-2">
+            {taskServices.map((service) => (
+              <Card
+                key={service.title}
+                className="flex flex-col overflow-hidden border-neutral-800/80 bg-neutral-950/70 text-neutral-100 shadow-[0_0_40px_rgba(0,0,0,0.7)] transition-transform hover:-translate-y-0.5 hover:border-neutral-600/80"
+              >
+                <div className="relative h-48 w-full bg-neutral-900">
+                  <Image src={service.image} alt={service.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover opacity-80 transition-opacity hover:opacity-100" />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <CardHeader className="p-0 mb-4">
+                    <CardTitle className="text-lg md:text-xl">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex flex-1 flex-col justify-between gap-6 p-0">
+                    <div className="space-y-4">
+                      <p className="text-xs text-neutral-400 md:text-sm">{service.body}</p>
+                      <ul className="space-y-1">
+                        {service.features.map((feature) => (
+                          <li key={feature} className="flex items-center gap-2 text-[11px] text-neutral-500">
+                            <span className="block h-1 w-1 rounded-full bg-neutral-600" />{feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <Button asChild variant="link" className="h-auto w-fit p-0 text-xs text-neutral-300 hover:text-white group">
+                      <Link href={service.href} className="flex items-center gap-1">View Detail<ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" /></Link>
+                    </Button>
+                  </CardContent>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

@@ -9,6 +9,7 @@ import { ContactSection } from "@/components/contact-section";
 import { TechStack } from "@/components/tech-stack";
 import { FAQSection } from "@/components/faq-section";
 import { ScrollAnimation } from "@/components/ui/scroll-animation";
+import { PerformanceSection } from "@/components/performance-section";
 
 export const metadata: Metadata = {
   title: "株式会社ZTEX | 技術を経営の確かな推進力に。",
@@ -18,11 +19,30 @@ export const metadata: Metadata = {
     title: "株式会社ZTEX | 技術を経営の確かな推進力に。",
     description: "AI導入・AXコンサルティングの株式会社ZTEX。業務自動化から高度AI実装まで。仙台・宮城から全国対応。",
   },
+  alternates: {
+    canonical: "/",
+  },
+};
+
+const jsonLdData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "株式会社ZTEX",
+  url: "https://ztex-japan.com",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://ztex-japan.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
 };
 
 export default function Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+      />
       <Hero />
 
       <ScrollAnimation delay={0.2}>
@@ -39,6 +59,10 @@ export default function Page() {
 
       <ScrollAnimation>
         <CasesSection />
+      </ScrollAnimation>
+
+      <ScrollAnimation>
+        <PerformanceSection />
       </ScrollAnimation>
 
       <ScrollAnimation>
