@@ -81,7 +81,7 @@ export default function ContactForm() {
                         <h1 className="mb-4 text-3xl font-bold text-white md:text-4xl">
                             CONTACT
                         </h1>
-                        <p className="text-neutral-400">
+                        <p className="text-neutral-300">
                             制作のご依頼、お見積もり、その他ご相談など
                             <br className="hidden sm:block" />
                             お気軽にお問い合わせください。
@@ -93,7 +93,7 @@ export default function ContactForm() {
                             <h2 className="mb-4 text-2xl font-bold text-white">
                                 送信完了いたしました
                             </h2>
-                            <p className="mb-8 text-neutral-400">
+                            <p className="mb-8 text-neutral-300">
                                 お問い合わせありがとうございます。
                                 <br />
                                 担当者より通常3営業日以内にご連絡させていただきます。

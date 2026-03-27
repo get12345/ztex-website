@@ -114,7 +114,7 @@ export default function GlossaryDetailPage({ params }: Props) {
                 <div className="mt-20 text-center">
                     <div className="inline-block rounded-2xl border border-neutral-800 bg-neutral-950 p-8">
                         <h3 className="text-lg font-semibold text-white mb-2">「{term.term}」の自社活用にお悩みですか？</h3>
-                        <p className="text-neutral-400 text-sm mb-6 max-w-md mx-auto">
+                        <p className="text-neutral-300 text-sm mb-6 max-w-md mx-auto">
                             ZTEXでは、{term.term}を含む最新技術を、御社の経営課題に合わせて実装までサポートします。
                         </p>
                         <Button asChild className="rounded-full bg-white text-black hover:bg-neutral-200 px-8">

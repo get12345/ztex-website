@@ -90,7 +90,7 @@ export function ServicesSection() {
                   </CardHeader>
                   <CardContent className="flex flex-1 flex-col justify-between gap-6 p-0">
                     <div className="space-y-4">
-                      <p className="text-xs text-neutral-400 md:text-sm">{service.body}</p>
+                      <p className="text-xs text-neutral-300 md:text-sm">{service.body}</p>
                       <ul className="space-y-1">
                         {service.features.map((feature) => (
                           <li key={feature} className="flex items-center gap-2 text-[11px] text-neutral-500">
@@ -127,7 +127,7 @@ export function ServicesSection() {
                   </CardHeader>
                   <CardContent className="flex flex-1 flex-col justify-between gap-6 p-0">
                     <div className="space-y-4">
-                      <p className="text-xs text-neutral-400 md:text-sm">{service.body}</p>
+                      <p className="text-xs text-neutral-300 md:text-sm">{service.body}</p>
                       <ul className="space-y-1">
                         {service.features.map((feature) => (
                           <li key={feature} className="flex items-center gap-2 text-[11px] text-neutral-500">

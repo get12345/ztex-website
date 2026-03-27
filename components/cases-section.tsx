@@ -73,7 +73,7 @@ export function CasesSection() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="p-0">
-                    <p className="text-xs text-neutral-400 leading-relaxed">
+                    <p className="text-xs text-neutral-300 leading-relaxed">
                       {item.body}
                     </p>
                   </CardContent>
@@ -106,7 +106,7 @@ export function CasesSection() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="p-0">
-                    <p className="text-xs text-neutral-400 leading-relaxed">
+                    <p className="text-xs text-neutral-300 leading-relaxed">
                       {item.body}
                     </p>
                   </CardContent>

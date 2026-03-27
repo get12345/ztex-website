@@ -12,8 +12,8 @@ export function ContactSection() {
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
               CONTACT
             </h2>
-            <p className="text-neutral-400 md:text-lg">
-              建設・製造業の現場を変える第一歩。<br />
+            <p className="text-neutral-300 md:text-lg">
+              業務を変える第一歩は、ここから。<br />
               まずはお気軽にご相談ください。
             </p>
           </div>

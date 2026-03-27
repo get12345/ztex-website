@@ -74,7 +74,7 @@ export default function SalesMarketingTaskPage() {
 
         <h1 className="mt-3 text-2xl font-semibold md:text-3xl lg:text-4xl">
           「売上を作る時間」を最大化する。<br className="hidden md:block" />
-          <span className="text-neutral-400">営業・マーケティングのAI業務自動化</span>
+          <span className="text-neutral-300">営業・マーケティングのAI業務自動化</span>
         </h1>
         <p className="mt-6 max-w-2xl text-sm text-neutral-300 md:text-base leading-relaxed">
           営業担当者が「資料作成」や「顧客リストの整理」、「SNSの投稿作業」に追われていては、本来の「顧客と向き合う時間」が奪われてしまいます。<br />
@@ -119,7 +119,7 @@ export default function SalesMarketingTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 提案書・相見積もりの半自動生成
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 過去の優秀な提案データや製品カタログをAIに学習させます。「顧客の業種」と「課題」を入力するだけで、最適な提案構成や相見積もりのドラフト（叩き台）を最短数分で自動作成。営業の資料作成時間を大幅に削ります。
               </p>
             </div>
@@ -131,7 +131,7 @@ export default function SalesMarketingTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 SNS（Insta/LINE）の自動運用・分析
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 ブログ記事や商品情報から、InstagramやLINE配信用のテキストをAIが自動生成・要約。カレンダーベースで指定日時に自動投稿します。さらに各投稿のエンゲージメント（反応率）を自動取得し、レポート化まで一貫して行います。
               </p>
             </div>
@@ -143,7 +143,7 @@ export default function SalesMarketingTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 最適な営業リストのAI抽出
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 眠っている既存顧客リストや名刺データと、現在の外部環境（ニュース、トレンド）をAIがかけ合わせ、「今アプローチすべき確度の高い企業」を自動抽出して営業担当のSlack等へレコメンドします。
               </p>
             </div>
@@ -155,7 +155,7 @@ export default function SalesMarketingTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 問い合わせからCRMへの完全連携
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 Webサイトへの問い合わせ発生時、n8nを経由してSalesforceやHubSpot、Kintone等の顧客管理システム（CRM）へ顧客情報を即座に自動入力。同時に担当者へリマインドを飛ばし、対応漏れによる機会損失をゼロにします。
               </p>
             </div>

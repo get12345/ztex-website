@@ -74,7 +74,7 @@ export default function HRTaskPage() {
 
         <h1 className="mt-3 text-2xl font-semibold md:text-3xl lg:text-4xl">
           採用担当を「面接・定着活動」に集中させる。<br className="hidden md:block" />
-          <span className="text-neutral-400">採用・労務・人事のAI業務自動化</span>
+          <span className="text-neutral-300">採用・労務・人事のAI業務自動化</span>
         </h1>
         <p className="mt-6 max-w-2xl text-sm text-neutral-300 md:text-base leading-relaxed">
           採用難の時代、人事担当者は応募者に少しでも早く、熱意を持ってアプローチしなければなりません。しかし、スカウトメールの作成や日程調整、社員からの問い合わせ対応など「作業」に忙殺されているのが現状です。<br />
@@ -119,7 +119,7 @@ export default function HRTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 スカウト文面のAI自動パーソナライズ
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 候補者のレジュメ（職務経歴書）と、自社の魅力・求める人物像をAIに入力。「なぜあなたにスカウトを送ったのか」が伝わる、個別に最適化された（パーソナライズされた）熱意あるスカウト文面を1分で自動作成します。
               </p>
             </div>
@@ -131,7 +131,7 @@ export default function HRTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 応募者への面接日程調整の自動化
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 書類選考を通過した応募者に対し、n8nを経由してGoogleカレンダー等と連携した「空き日程調整ツール」のURLを自動送信。日程が確定すると、関係者のカレンダー登録と同席者へのSlack通知、Web会議URLの発行までを裏側で全自動処理します。
               </p>
             </div>
@@ -143,7 +143,7 @@ export default function HRTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 社内ヘルプデスクAI（RAGチャットボット）
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 就業規則、経費精算マニュアル、福利厚生のルール、過去のよくある質問（FAQ）をデータ化し自社専用のAIに学習。社員が「出張旅費の精算方法は？」とチャットで聞けば、24時間365日いつでもAIが社内規程に基づいて即答します。
               </p>
             </div>
@@ -155,7 +155,7 @@ export default function HRTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 採用対応・入社手続き状況の可視化
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 複数の求人媒体からの応募者情報を、AIとn8nで一元化してNotionやKintoneへ自動集約。選考ステータスや、内定後の入社手続き（アカウント発行や備品手配など）のタスク漏れを防ぐリマインドシステムを構築します。
               </p>
             </div>

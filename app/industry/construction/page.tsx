@@ -78,7 +78,7 @@ export default function ConstructionIndustryPage() {
 
         <h1 className="mt-3 text-2xl font-semibold md:text-3xl lg:text-4xl">
           「現場」は変えずに「事務・管理」を劇的に効率化。<br className="hidden md:block" />
-          <span className="text-neutral-400">宮城・東北を中心に全国の建設業向けAI導入</span>
+          <span className="text-neutral-300">宮城・東北を中心に全国の建設業向けAI導入</span>
         </h1>
         <p className="mt-6 max-w-2xl text-sm text-neutral-300 md:text-base leading-relaxed">
           建設業において最も自動化すべきは「現場監督（担当者）のパソコン仕事・書類仕事」です。<br />
@@ -123,7 +123,7 @@ export default function ConstructionIndustryPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 見積書・図面のAI読み取りと積算支援
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 図面のPDFや過去の見積もりデータをAIが読み取り、拾い出し作業をサポート。AIが積算のドラフト（叩き台）を自動で作成することで、ゼロから手作業で作っていた属人的な見積もり作成のスピードと精度を圧倒的に向上させます。
               </p>
             </div>
@@ -135,7 +135,7 @@ export default function ConstructionIndustryPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 現場写真からの工事写真台帳・報告書自動生成
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 現場でスマホで写真を撮り、LINE等に簡単な音声メモを残すだけでOK。AIが音声をテキスト化し、写真の内容に合わせて工事報告書や是正指示書の所定フォーマットへ自動転記。帰社後の「パソコン仕事」をゼロに近づけます。
               </p>
             </div>
@@ -147,7 +147,7 @@ export default function ConstructionIndustryPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 施工計画書やKY（危険予知）活動の自動化
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 現場の基本情報や過去の類似工事のデータを入力するだけで、現場に合わせた施工計画書の文面案や、毎日のKY（危険予知）活動のポイントをAIが自動生成。現場監督の心理的・時間的負担を激減させます。
               </p>
             </div>
@@ -159,7 +159,7 @@ export default function ConstructionIndustryPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 「ベテラン現場監督」のAI技術伝承
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 過去の安全基準、現場トラブル解決事例、各種社内マニュアルをデータ化。「配管クレーン作業の安全基準は？」とスマホで聞けば、最新基準や過去の事例をもとにAIが瞬時に回答する「社内知恵袋（RAG）」を構築します。
               </p>
             </div>

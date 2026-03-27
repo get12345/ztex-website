@@ -30,7 +30,7 @@ export default function PhilosophyPage() {
               <p className="text-lg font-medium text-neutral-200 mb-4 tracking-wider">
                 自由に生きられる世界を創る
               </p>
-              <p className="text-sm leading-relaxed text-neutral-400 max-w-2xl">
+              <p className="text-sm leading-relaxed text-neutral-300 max-w-2xl">
                 AI技術の力で、人が本来やるべき価値ある仕事に集中できる社会を実現します。
                 <br />
                 <br />
@@ -45,7 +45,7 @@ export default function PhilosophyPage() {
               <p className="text-lg font-medium text-neutral-200 mb-4 tracking-wider">
                 AIの力で日本の中小企業の生産性を最大化する
               </p>
-              <p className="text-sm leading-relaxed text-neutral-400 max-w-2xl">
+              <p className="text-sm leading-relaxed text-neutral-300 max-w-2xl">
                 宮城を拠点に、全国の中小企業に対し、業務効率化・自動化の支援を行っています。
                 <br />
                 <br />
@@ -63,7 +63,7 @@ export default function PhilosophyPage() {
               <p className="text-lg font-medium text-neutral-200 mb-4 tracking-wider">
                 2030年、東北から「人手不足」という言葉をなくす
               </p>
-              <p className="text-sm leading-relaxed text-neutral-400 max-w-2xl">
+              <p className="text-sm leading-relaxed text-neutral-300 max-w-2xl">
                 少子高齢化が全国でも特に進む東北において、AIによる業務の標準化・可視化・自動化を推進し、人が足りなくても回る仕組みを、一社ずつ確実に築いていく。
                 <br />
                 <br />

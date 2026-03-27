@@ -60,7 +60,7 @@ export default function MessagePage() {
             <p>
               この信念のもと、AIを通じて企業と地域社会に価値を提供し続けてまいります。
             </p>
-            <p className="mt-12 text-right text-neutral-400">代表取締役</p>
+            <p className="mt-12 text-right text-neutral-300">代表取締役</p>
           </div>
         </section>
       </div>

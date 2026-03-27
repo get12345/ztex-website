@@ -80,10 +80,10 @@ export function PricingSection({ type = "standard" }: PricingProps) {
                       {plan.name}
                     </p>
                     <CardTitle className="text-lg">{plan.price}</CardTitle>
-                    <p className="text-xs text-neutral-400">{plan.tag}</p>
+                    <p className="text-xs text-neutral-300">{plan.tag}</p>
                   </CardHeader>
                   <CardContent className="space-y-3">
-                    <ul className="space-y-1 text-xs text-neutral-400">
+                    <ul className="space-y-1 text-xs text-neutral-300">
                       {plan.features.map((f) => (
                         <li key={f}>・{f}</li>
                       ))}
@@ -106,7 +106,7 @@ export function PricingSection({ type = "standard" }: PricingProps) {
             <Card className="border-neutral-800/80 bg-neutral-950/70 text-neutral-100 shadow-[0_0_40px_rgba(0,0,0,0.8)]">
               <CardHeader>
                 <CardTitle className="text-xl">Custom Plan</CardTitle>
-                <p className="text-sm text-neutral-400">
+                <p className="text-sm text-neutral-300">
                   仕様確認・要件定義を行い、都度お見積もり
                 </p>
               </CardHeader>

@@ -30,7 +30,7 @@ export function FlowSection() {
         <p className="section-eyebrow">FLOW</p>
         <h2 className="section-title">制作・導入の流れ</h2>
 
-        <ol className="mt-6 space-y-5 text-sm text-neutral-400">
+        <ol className="mt-6 space-y-5 text-sm text-neutral-300">
           {steps.map((step) => (
             <li
               key={step.label}

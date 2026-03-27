@@ -74,7 +74,7 @@ export default function BackOfficeTaskPage() {
 
         <h1 className="mt-3 text-2xl font-semibold md:text-3xl lg:text-4xl">
           「見えない残業」をゼロにする。<br className="hidden md:block" />
-          <span className="text-neutral-400">事務・バックオフィスのAI業務自動化</span>
+          <span className="text-neutral-300">事務・バックオフィスのAI業務自動化</span>
         </h1>
         <p className="mt-6 max-w-2xl text-sm text-neutral-300 md:text-base leading-relaxed">
           会社を支える事務・経理・総務部門。毎日の「転記作業」「メールの仕分け」「書類の確認」が積もり積もって、本来の業務効率化や財務戦略に時間が使えていない企業が後を絶ちません。<br />
@@ -119,7 +119,7 @@ export default function BackOfficeTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 紙・PDFのAI-OCR読み取り
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 形式がバラバラな請求書や納品書、手書きのFAXをスキャナで読み込む、あるいは指定メールにPDFを送るだけで、AI-OCRが「日付・金額・取引先名」などの必要情報を自動抽出。CSV等でデータ化します。
               </p>
             </div>
@@ -131,7 +131,7 @@ export default function BackOfficeTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 会計システム等への自動転記連携
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 読み取ったデータを、担当者が手動で入力するのではなく、n8nを経由してそのまま自社で利用中の会計システムやERP、Kintoneなどのデータベースへ自動転記。入力にかかる時間とヒューマンエラーを文字通り「ゼロ」にします。
               </p>
             </div>
@@ -143,7 +143,7 @@ export default function BackOfficeTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 経費精算・申請書類の自動チェック
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 交通費精算や立て替え経費の領収書の数字と、申請内容に相違がないかをAIが自動で突合チェック。社内規定から逸脱しているものがあれば、担当者の確認前に申請者へ自動で差し戻しの通知を送ります。
               </p>
             </div>
@@ -155,7 +155,7 @@ export default function BackOfficeTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 定型メールの自動判別と返信ドラフト
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 代表アドレスに届く大量のメールをLLM（生成AI）が内容を理解して自動でフォルダに分類。「問い合わせ」「受発注」「営業」などを即座に見分け、受発注やよくある質問には返信文の下書き（ドラフト）まで自動作成します。
               </p>
             </div>

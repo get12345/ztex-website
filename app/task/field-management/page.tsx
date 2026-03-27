@@ -74,7 +74,7 @@ export default function FieldManagementTaskPage() {
 
         <h1 className="mt-3 text-2xl font-semibold md:text-3xl lg:text-4xl">
           「現場」と「本社」のタイムラグをなくす。<br className="hidden md:block" />
-          <span className="text-neutral-400">現場・プロジェクト管理のAI業務自動化</span>
+          <span className="text-neutral-300">現場・プロジェクト管理のAI業務自動化</span>
         </h1>
         <p className="mt-6 max-w-2xl text-sm text-neutral-300 md:text-base leading-relaxed">
           建設・建築から、外回りの営業、メンテナンス業務まで。「現場」と「本社（管理側）」の情報伝達の遅れは、品質やスケジュールの致命的なトラブルに直結します。<br />
@@ -119,7 +119,7 @@ export default function FieldManagementTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 LINE等からの「日報・報告」自動変換
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 現場のスタッフは「普段使いのLINE」に音声メモや写真で「〇〇の作業完了、部材足りない」と送るだけ。AIが必要な情報を抽出し、社内の正式な日報フォーマットへテキストを自動整形。Kintoneや業務システムへ直接登録します。
               </p>
             </div>
@@ -131,7 +131,7 @@ export default function FieldManagementTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 打ち合わせ議事録のAI自動要約とTODO抽出
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 現場や本社での定例会議の録音データ（またはオンライン会議のツール連携）から、文字起こしだけでなく内容を構造化して「決定事項」と「誰がいつまでにやるべきタスク（TODO）」をAIが自動抽出。関係者のチャットへ展開します。
               </p>
             </div>
@@ -143,7 +143,7 @@ export default function FieldManagementTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 工程・スケジュール遅延の自動検知アラート
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 日報データや、資材の発注・納入システムのデータを横断的に監視。当初予定していたスケジュールから「一定日数の遅れ」や「天候不良による停滞」をシステム（n8n）が自動検知し、クリティカルになる前に管理者のSlack等のチャットへ警告通知を発生させます。
               </p>
             </div>
@@ -155,7 +155,7 @@ export default function FieldManagementTaskPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 写真整理・画像データ自動分類のRPA
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 現場から毎日送られてくる数十〜百枚の進捗写真などを、ファイル名や送信メッセージの内容に基づいて、AIが自動で「工区別」「日付別」「トラブル箇所」の適切なクラウドフォルダ（Google Drive等）に仕分けして保存します。
               </p>
             </div>

@@ -25,7 +25,7 @@ export function MissionSection() {
             </h2>
           </div>
 
-          <div className="grid gap-6 text-sm text-neutral-400 md:grid-cols-2 md:text-base">
+          <div className="grid gap-6 text-sm text-neutral-300 md:grid-cols-2 md:text-base">
             <div className="space-y-3">
               <h3 className="text-sm font-medium text-neutral-100 md:text-base">
                 Client First = 現場視点の定着支援

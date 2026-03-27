@@ -78,7 +78,7 @@ export default function ManufacturingIndustryPage() {
 
         <h1 className="mt-3 text-2xl font-semibold md:text-3xl lg:text-4xl">
           事務作業と技術伝承の壁をAIで突破する。<br className="hidden md:block" />
-          <span className="text-neutral-400">中小製造業向けの業務自動化</span>
+          <span className="text-neutral-300">中小製造業向けの業務自動化</span>
         </h1>
         <p className="mt-6 max-w-2xl text-sm text-neutral-300 md:text-base leading-relaxed">
           製造業＝工場の機械化だけではありません。「人の業務」におけるアナログな課題こそが深刻なボトルネックです。<br />
@@ -123,7 +123,7 @@ export default function ManufacturingIndustryPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 「匠の技」のデータ化とAI技術伝承
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 ベテラン職人の作業マニュアル、過去のトラブル対応履歴、安全基準などをデータ化し、自社専用AI（RAGチャットボット）に学習させます。若手社員がスマホで「〇〇の切削加工時の注意点は？」と質問すれば、熟練者のノウハウが即答する「社内知恵袋」を構築します。
               </p>
             </div>
@@ -135,7 +135,7 @@ export default function ManufacturingIndustryPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 受発注業務（FAX・PDF）の完全自動化
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 取引先から届く手書きのFAXや非定型のPDF注文書をAI-OCRが自動解析。n8nを活用し、解析データをそのまま自社の生産管理システムや会計ソフト（弥生、freeeなど）へ自動転記します。事務員の入力ミスと残業をゼロにするフローです。
               </p>
             </div>
@@ -147,7 +147,7 @@ export default function ManufacturingIndustryPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 現場からの報告・日報の自動集計
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 現場スタッフがスマホ（LINE等）から音声や簡単なテキストで「〇〇の部品が不足気味」と送るだけで、AIが文脈を解釈し丁寧な文章に整形。そのまま本社のKintone等の業務管理ツールやチャットツール（Slack等）の指定トピックへ自動で分類・報告します。
               </p>
             </div>
@@ -159,7 +159,7 @@ export default function ManufacturingIndustryPage() {
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
                 過去データ検索と見積もり作成のスピードアップ
               </h3>
-              <p className="text-sm leading-relaxed text-neutral-400">
+              <p className="text-sm leading-relaxed text-neutral-300">
                 過去の膨大な図面データ、見積書、部材価格表をAIが瞬時に横断検索。「この仕様の見積もりを作って」と指示するだけで、類似案件から適正な原価と納期を割り出し、見積書のドラフトを数分で作成。営業とバックオフィスの負担を軽減します。
               </p>
             </div>

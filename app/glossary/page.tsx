@@ -19,7 +19,7 @@ export default function GlossaryPage() {
                 <div className="mb-12">
                     <p className="section-eyebrow">KNOWLEDGE BASE</p>
                     <h1 className="mt-3 text-3xl font-semibold md:text-4xl">AI/AX 用語集</h1>
-                    <p className="mt-4 max-w-2xl text-neutral-400">
+                    <p className="mt-4 max-w-2xl text-neutral-300">
                         AI技術は日々進化しています。
                         経営者やプロジェクト責任者が知っておくべき重要キーワードを定義・解説しました。
                     </p>
@@ -35,7 +35,7 @@ export default function GlossaryPage() {
                             <h2 className="mb-3 text-lg font-bold text-neutral-100 group-hover:text-white">
                                 {item.term}
                             </h2>
-                            <p className="mb-6 text-sm leading-relaxed text-neutral-400 line-clamp-3">
+                            <p className="mb-6 text-sm leading-relaxed text-neutral-300 line-clamp-3">
                                 {item.definition}
                             </p>
                             <div className="flex items-center text-xs font-medium text-neutral-500 group-hover:text-white">

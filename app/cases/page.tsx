@@ -24,7 +24,7 @@ export default function CasesPage() {
                     <h1 className="mb-4 text-3xl font-bold text-white md:text-4xl">
                         CASES
                     </h1>
-                    <p className="text-neutral-400">
+                    <p className="text-neutral-300">
                         ZTEXの導入事例をご紹介します。
                     </p>
                 </div>
@@ -63,7 +63,7 @@ export default function CasesPage() {
                                 </p>
 
                                 <div className="border-t border-neutral-800 pt-4">
-                                    <p className="text-sm leading-relaxed text-neutral-400">
+                                    <p className="text-sm leading-relaxed text-neutral-300">
                                         {item.detail}
                                     </p>
                                 </div>

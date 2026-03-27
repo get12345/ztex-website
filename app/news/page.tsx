@@ -32,7 +32,7 @@ export default function NewsPage() {
                         </Link>
                     </Button>
                     <h1 className="mt-6 text-3xl font-bold tracking-tight md:text-4xl">NEWS</h1>
-                    <p className="mt-4 text-neutral-400">最新のお知らせ</p>
+                    <p className="mt-4 text-neutral-300">最新のお知らせ</p>
                 </div>
 
                 <div className="space-y-6">

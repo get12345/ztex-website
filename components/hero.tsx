@@ -184,7 +184,7 @@ export function Hero() {
             </span>
           </h1>
           {/* サブコピー */}
-          <p className="text-sm leading-relaxed text-neutral-400 md:text-lg md:leading-relaxed">
+          <p className="text-sm leading-relaxed text-neutral-300 md:text-lg md:leading-relaxed">
             AI・自動化技術による業務プロセスの再構築で、
             <br />
             現場の生産性向上と、経営資源の最適化を実現。
