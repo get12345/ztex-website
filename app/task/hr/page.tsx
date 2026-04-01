@@ -132,7 +132,7 @@ export default function HRTaskPage() {
                 応募者への面接日程調整の自動化
               </h3>
               <p className="text-sm leading-relaxed text-neutral-300">
-                書類選考を通過した応募者に対し、n8nを経由してGoogleカレンダー等と連携した「空き日程調整ツール」のURLを自動送信。日程が確定すると、関係者のカレンダー登録と同席者へのSlack通知、Web会議URLの発行までを裏側で全自動処理します。
+                書類選考を通過した応募者に対し、連携ツールを経由してGoogleカレンダー等と連携した「空き日程調整ツール」のURLを自動送信。日程が確定すると、関係者のカレンダー登録と同席者へのSlack通知、Web会議URLの発行までを裏側で全自動処理します。
               </p>
             </div>
 
@@ -156,7 +156,7 @@ export default function HRTaskPage() {
                 採用対応・入社手続き状況の可視化
               </h3>
               <p className="text-sm leading-relaxed text-neutral-300">
-                複数の求人媒体からの応募者情報を、AIとn8nで一元化してNotionやKintoneへ自動集約。選考ステータスや、内定後の入社手続き（アカウント発行や備品手配など）のタスク漏れを防ぐリマインドシステムを構築します。
+                複数の求人媒体からの応募者情報を、AIと連携ツールで一元化してNotionやKintoneへ自動集約。選考ステータスや、内定後の入社手続き（アカウント発行や備品手配など）のタスク漏れを防ぐリマインドシステムを構築します。
               </p>
             </div>
 

@@ -47,10 +47,10 @@ const taskServices = [
   },
   {
     title: "現場・プロジェクト管理",
-    body: "LINEからの報告を日報へ自動変換。現場と本社の情報伝達のタイムラグを完全に解消します。",
+    body: "使い慣れたチャットツールからの報告を日報へ自動変換。現場と本社の情報伝達のタイムラグを完全に解消します。",
     href: "/task/field-management",
     image: "/images/field_management_ai.png",
-    features: ["LINE報告の自動日報化", "議事録AI自動要約", "遅延検知アラート"],
+    features: ["チャット報告の自動日報化", "議事録AI自動要約", "遅延検知アラート"],
   },
 ];
 

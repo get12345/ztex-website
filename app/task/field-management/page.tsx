@@ -5,11 +5,11 @@ import { AlertCircle, MessageCircle, Mic, Timer, Camera } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "現場・プロジェクト管理のAI業務自動化 | 株式会社ZTEX",
-  description: "現場からのアナログなLINE報告を日報やシステムへ自動変換・登録。議事録作成や進捗管理の遅れを防ぐ情報共有DX。",
+  description: "現場からのアナログなチャット報告を日報やシステムへ自動変換・登録。議事録作成や進捗管理の遅れを防ぐ情報共有DX。",
   keywords: ["現場管理AI", "プロジェクト自動化", "日報自動作成", "議事録AI", "n8n", "ZTEX", "仙台", "施工管理DX"],
   openGraph: {
     title: "現場・プロジェクト管理のAI業務自動化 | 株式会社ZTEX",
-    description: "現場の職人さんは普段通りLINEで報告するだけ。AIがテキストを整形し、社内システムへ日報・報告を自動登録します。",
+    description: "現場の職人さんは普段通り使い慣れたチャットアプリで報告するだけ。AIがテキストを整形し、社内システムへ日報・報告を自動登録します。",
   },
     alternates: {
         canonical: "/task/field-management",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: "現場スタッフが新しいアプリの使い方を覚えるのは難しいのですが…",
-    answer: "ご安心ください。現場の皆様が日常的に使っている「LINE」などを入り口とするアーキテクチャで設計します。新しいアプリを覚える必要はなく、これまで通りLINEでメッセージや写真を送るだけで、裏側でAIが自動処理を行います。",
+    answer: "ご安心ください。現場の皆様が日常的に使っているLINEや各種ビジネスチャットなどを入り口とするアーキテクチャで設計します。新しいアプリを覚える必要はなく、これまで通りチャットでメッセージや写真を送るだけで、裏側でAIが自動処理を行います。",
   },
   {
     question: "現場特有の専門用語や略語が含まれる音声・テキストでも正しく読み取れますか？",
@@ -41,7 +41,7 @@ export default function FieldManagementTaskPage() {
       name: "株式会社ZTEX",
       url: "https://ztex-japan.com",
     },
-    description: "現場からのLINE等での報告をAIで自動整形し、日報やシステムへ登録。現場と本社の情報伝達のタイムラグを解消します。",
+    description: "現場からのチャット等からの報告をAIで自動整形し、日報やシステムへ登録。現場と本社の情報伝達のタイムラグを解消します。",
     areaServed: "JP",
   };
 
@@ -78,7 +78,7 @@ export default function FieldManagementTaskPage() {
         </h1>
         <p className="mt-6 max-w-2xl text-sm text-neutral-300 md:text-base leading-relaxed">
           建設・建築から、外回りの営業、メンテナンス業務まで。「現場」と「本社（管理側）」の情報伝達の遅れは、品質やスケジュールの致命的なトラブルに直結します。<br />
-          ZTEXは、現場スタッフの「普段通りの報告（LINE等）」を受け取り、裏側でAI・n8nが自動整形・システム連携を行うことで、現場への負担・教育コストなしで情報共有のリアルタイム化（DX）を実現します。
+          ZTEXは、現場スタッフの「普段通りの報告（LINEや各種チャット等）」を受け取り、裏側でAIや連携ツールが自動処理・システム連携を行うことで、現場への負担・教育コストなしで情報共有のリアルタイム化（DX）を実現します。
         </p>
 
         <div className="mt-12 w-full lg:max-w-4xl mx-auto rounded-xl border border-neutral-800 bg-neutral-900/30 p-6 md:p-8">
@@ -88,7 +88,7 @@ export default function FieldManagementTaskPage() {
           <ul className="space-y-4 text-sm md:text-base text-neutral-300">
             <li className="flex items-start gap-3">
               <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
-              現場からの日報が手書きやLINEの長文などフォーマットが定まっておらず、本社の担当者が毎日「代書・再入力」している。
+              現場からの日報が手書きやチャットの長文などフォーマットが定まっておらず、本社の担当者が毎日「代書・再入力」している。
             </li>
             <li className="flex items-start gap-3">
               <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
@@ -117,10 +117,10 @@ export default function FieldManagementTaskPage() {
                  <MessageCircle className="h-5 w-5 text-neutral-400" />
               </div>
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
-                LINE等からの「日報・報告」自動変換
+                チャットからの「日報・報告」自動変換
               </h3>
               <p className="text-sm leading-relaxed text-neutral-300">
-                現場のスタッフは「普段使いのLINE」に音声メモや写真で「〇〇の作業完了、部材足りない」と送るだけ。AIが必要な情報を抽出し、社内の正式な日報フォーマットへテキストを自動整形。Kintoneや業務システムへ直接登録します。
+                現場のスタッフは「普段使いのチャットツール」に音声メモや写真で「〇〇の作業完了、部材足りない」と送るだけ。AIが必要な情報を抽出し、社内の正式な日報フォーマットへテキストを自動整形。Kintoneや業務システムへ直接登録します。
               </p>
             </div>
 

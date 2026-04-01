@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ["営業自動化", "SNS自動投稿", "AI提案書", "顧客分析", "マーケティングAI", "ZTEX"],
   openGraph: {
     title: "営業・マーケティングのAI業務自動化 | 株式会社ZTEX",
-    description: "プロポーザル作成支援からInstagram/LINEの自動運用まで、売上を作る時間をAIで生み出します。",
+    description: "プロポーザル作成支援から各種SNSやチャットアプリの自動運用まで、売上を作る時間をAIで生み出します。",
   },
     alternates: {
         canonical: "/task/sales-marketing",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: "InstagramやLINEの自動投稿でアカウントが凍結されないか心配です。",
+    question: "各種SNSやチャットアプリの自動投稿でアカウントが凍結されないか心配です。",
     answer: "公式のAPI（Meta公式APIなど）を利用して安全な範囲で自動化を構築するため、スパム判定による凍結リスクは最小限に抑えられます。ガイドラインを遵守した運用フローを設計します。",
   },
   {
@@ -78,7 +78,7 @@ export default function SalesMarketingTaskPage() {
         </h1>
         <p className="mt-6 max-w-2xl text-sm text-neutral-300 md:text-base leading-relaxed">
           営業担当者が「資料作成」や「顧客リストの整理」、「SNSの投稿作業」に追われていては、本来の「顧客と向き合う時間」が奪われてしまいます。<br />
-          ZTEXは、最新の生成AIと自動化ツール（n8n）を組み合わせ、時間のかかる作業を効率化。少人数のチームでも売上を最大化する「攻めのAI導入」を実現します。
+          ZTEXは、最新の生成AIと自動化・連携ツールを組み合わせ、時間のかかる作業を効率化。少人数のチームでも売上を最大化する「攻めのAI導入」を実現します。
         </p>
 
         <div className="mt-12 w-full lg:max-w-4xl mx-auto rounded-xl border border-neutral-800 bg-neutral-900/30 p-6 md:p-8">
@@ -92,7 +92,7 @@ export default function SalesMarketingTaskPage() {
             </li>
             <li className="flex items-start gap-3">
               <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
-              新規獲得のためにInstagramやLINEを運用したいが、毎日の投稿や返信をする余力がない…
+              新規獲得のためにSNSや公式チャットを運用したいが、毎日の投稿や返信をする余力がない…
             </li>
             <li className="flex items-start gap-3">
               <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
@@ -129,10 +129,10 @@ export default function SalesMarketingTaskPage() {
                  <LineChart className="h-5 w-5 text-neutral-400" />
               </div>
               <h3 className="mb-3 text-lg font-medium text-neutral-100">
-                SNS（Insta/LINE）の自動運用・分析
+                公式SNS・チャットの自動運用・分析
               </h3>
               <p className="text-sm leading-relaxed text-neutral-300">
-                ブログ記事や商品情報から、InstagramやLINE配信用のテキストをAIが自動生成・要約。カレンダーベースで指定日時に自動投稿します。さらに各投稿のエンゲージメント（反応率）を自動取得し、レポート化まで一貫して行います。
+                ブログ記事や商品情報から、SNSやチャット配信用のテキストをAIが自動生成・要約。カレンダーベースで指定日時に自動投稿します。さらに各投稿のエンゲージメント（反応率）を自動取得し、レポート化まで一貫して行います。
               </p>
             </div>
 
@@ -156,7 +156,7 @@ export default function SalesMarketingTaskPage() {
                 問い合わせからCRMへの完全連携
               </h3>
               <p className="text-sm leading-relaxed text-neutral-300">
-                Webサイトへの問い合わせ発生時、n8nを経由してSalesforceやHubSpot、Kintone等の顧客管理システム（CRM）へ顧客情報を即座に自動入力。同時に担当者へリマインドを飛ばし、対応漏れによる機会損失をゼロにします。
+                Webサイトへの問い合わせ発生時、各種連携ツールを経由してSalesforceやHubSpot、Kintone等の顧客管理システム（CRM）へ顧客情報を即座に自動入力。同時に担当者へリマインドを飛ばし、対応漏れによる機会損失をゼロにします。
               </p>
             </div>
 

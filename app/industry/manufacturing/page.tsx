@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     question: "工場内にWi-Fi環境がない現場でも導入できますか？",
-    answer: "はい。クラウドベースのシステムだけでなく、スマートフォン回線を利用したLINEからの日報入力など、ネットワーク環境に制約がある現場にも対応可能なアーキテクチャで設計します。",
+    answer: "はい。クラウドベースのシステムだけでなく、スマートフォン回線を利用した使い慣れたチャットアプリからの日報入力など、ネットワーク環境に制約がある現場にも対応可能なアーキテクチャで設計します。",
   },
 ];
 
@@ -100,7 +100,7 @@ export default function ManufacturingIndustryPage() {
             </li>
             <li className="flex items-start gap-3">
               <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
-              現場からの日報が紙やLINEでバラバラに届き、本社の集計や報告書の作成に時間がかかり残業が発生している…
+              現場からの日報が紙や様々なチャットツールでバラバラに届き、本社の集計や報告書の作成に時間がかかり残業が発生している…
             </li>
             <li className="flex items-start gap-3">
               <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />

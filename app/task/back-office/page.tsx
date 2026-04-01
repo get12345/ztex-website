@@ -5,7 +5,7 @@ import { AlertCircle, FileDigit, Landmark, CheckSquare, Mail } from "lucide-reac
 
 export const metadata: Metadata = {
   title: "事務・バックオフィスのAI業務自動化 | 株式会社ZTEX",
-  description: "定型業務に追われる事務員・経理部門向け。AI-OCRとn8n連携で、手入力や転記作業などの「見えない残業」をゼロにします。",
+  description: "定型業務に追われる事務員・経理部門向け。AI-OCRとシステム連携で、手入力や転記作業などの「見えない残業」をゼロにします。",
   keywords: ["バックオフィス自動化", "事務効率化", "AI-OCR", "経理AI", "n8n", "ZTEX", "仙台"],
   openGraph: {
     title: "事務・バックオフィスのAI業務自動化 | 株式会社ZTEX",
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "既存で導入しているSaaS（freee、Money Forwardなど）との連携は可能ですか？",
-    answer: "はい、可能です。多くのクラウド会計・労務システムはAPIを持たせているため、n8nを経由してシームレスにデータ連携・自動入力のフローを構築できます。",
+    answer: "はい、可能です。多くのクラウド会計・労務システムはAPIを持たせているため、各種連携ツールを経由してシームレスにデータ連携・自動入力のフローを構築できます。",
   },
   {
     question: "AI-OCRの読み取り精度はどのくらいですか？",
@@ -132,7 +132,7 @@ export default function BackOfficeTaskPage() {
                 会計システム等への自動転記連携
               </h3>
               <p className="text-sm leading-relaxed text-neutral-300">
-                読み取ったデータを、担当者が手動で入力するのではなく、n8nを経由してそのまま自社で利用中の会計システムやERP、Kintoneなどのデータベースへ自動転記。入力にかかる時間とヒューマンエラーを文字通り「ゼロ」にします。
+                読み取ったデータを、担当者が手動で入力するのではなく、各種連携ツールを経由してそのまま自社で利用中の会計システムやERP、Kintoneなどのデータベースへ自動転記。入力にかかる時間とヒューマンエラーを文字通り「ゼロ」にします。
               </p>
             </div>
 
