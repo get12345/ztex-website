@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { Inter } from "next/font/google";
 
@@ -100,6 +101,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </div>
+        <SpeedInsights />
       </body>
     </html>
   );
