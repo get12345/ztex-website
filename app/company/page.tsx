@@ -94,7 +94,7 @@ export default function CompanyPage() {
 
         {/* ===== 会社概要テーブル ===== */}
         <section id="profile" className="mb-24">
-          <h2 className="text-xl font-semibold border-b border-neutral-800 pb-4 mb-8 text-neutral-100">
+          <h2 className="text-xl font-semibold mb-8 text-neutral-100">
             会社概要
           </h2>
           <dl className="divide-y divide-neutral-800 border-t border-neutral-800">
@@ -144,7 +144,7 @@ export default function CompanyPage() {
 
         {/* ===== 沿革 ===== */}
         <section id="history" className="mb-24">
-          <h2 className="text-xl font-semibold border-b border-neutral-800 pb-4 mb-8 text-neutral-100">
+          <h2 className="text-xl font-semibold mb-8 text-neutral-100">
             沿革
           </h2>
           <dl className="divide-y divide-neutral-800 border-t border-neutral-800">
