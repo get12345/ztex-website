@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FloatingCTA } from "@/components/floating-cta";
+import { ScrollProgress } from "@/components/scroll-progress";
 
 import { Inter } from "next/font/google";
 
@@ -93,6 +94,9 @@ export default function RootLayout({
           <div className="relative z-10 flex min-h-screen flex-col rounded-3xl border border-neutral-950/80 bg-black/80 shadow-[0_0_120px_rgba(0,0,0,0.9)]">
             {/* ★ 全ページ共通ヘッダー */}
             <Header />
+
+            {/* ★ スクロールプログレスバー */}
+            <ScrollProgress />
 
             {/* ★ ページごとの中身（ここに /, /services/..., /company などが入る） */}
             {children}

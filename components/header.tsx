@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { MagneticButton } from "@/components/ui/magnetic-button";
 
 const industryLinks = [
   { href: "/industry/construction", label: "建設業向け" },
@@ -193,13 +194,15 @@ export function Header() {
           </nav>
 
           {/* デスクトップ CTA（TOPの contact セクションへ） */}
-          <Button
-            asChild
-            variant="outline"
-            className="hidden h-9 rounded-full border-neutral-600 bg-transparent px-5 text-[12px] text-neutral-100 hover:bg-neutral-900 md:inline-flex"
-          >
-            <Link href="/contact">CONTACT</Link>
-          </Button>
+          <MagneticButton className="hidden md:inline-flex">
+            <Button
+              asChild
+              variant="outline"
+              className="h-9 rounded-full border-neutral-600 bg-transparent px-5 text-[12px] text-neutral-100 hover:bg-neutral-900"
+            >
+              <Link href="/contact">CONTACT</Link>
+            </Button>
+          </MagneticButton>
 
           {/* ▼ モバイル：ハンバーガー（PCでは非表示） */}
           <button

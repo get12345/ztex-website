@@ -70,9 +70,15 @@ export function PricingSection({ type = "standard" }: PricingProps) {
           {type === "standard" ? (
             <div className="grid gap-4 md:grid-cols-3">
               {plans.map((plan, idx) => (
+                <div key={plan.name} className={`relative rounded-xl ${idx === 1 ? "p-[1px] overflow-hidden" : ""}`}>
+                  {idx === 1 && (
+                    <div className="absolute inset-0 z-0 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_200deg,rgba(255,255,255,0.8)_360deg)] opacity-60" />
+                  )}
+                  {idx === 1 && (
+                    <div className="absolute inset-[1px] z-0 rounded-xl bg-neutral-950/90" />
+                  )}
                 <Card
-                  key={plan.name}
-                  className={`border-neutral-800/80 bg-neutral-950/70 text-neutral-100 shadow-[0_0_40px_rgba(0,0,0,0.8)] ${idx === 1 ? "border-neutral-500/90" : ""
+                  className={`relative z-10 h-full border-neutral-800/80 bg-neutral-950/70 text-neutral-100 shadow-[0_0_40px_rgba(0,0,0,0.8)] ${idx === 1 ? "border-transparent bg-transparent" : ""
                     }`}
                 >
                   <CardHeader className="space-y-2">
@@ -100,6 +106,7 @@ export function PricingSection({ type = "standard" }: PricingProps) {
                     </Button>
                   </CardContent>
                 </Card>
+                </div>
               ))}
             </div>
           ) : (
