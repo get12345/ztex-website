@@ -50,7 +50,7 @@ export default function MessagePage() {
               当社は東北出身のメンバーで構成されており、地域特有の価値観や人とのつながりを大切にしています。実際に現場へ足を運び、課題や温度感を肌で感じ取りながら、現実的かつ成果の出る提案を行っております。
             </p>
             <p>
-              これまでに30社以上の企業様へAI導入支援を行い、業務時間の最大80%以上削減、月間60〜100時間の業務削減を実現。継続契約率は9割以上を維持しております。
+              これまでに30社以上の企業様へAI導入支援を行い、業務時間の最大80%以上削減、月間60〜100時間の業務削減を実現しております。
             </p>
             <div className="my-10 pl-5 border-l-2 border-neutral-600">
               <p className="text-neutral-100 text-lg sm:text-xl font-medium tracking-wider">

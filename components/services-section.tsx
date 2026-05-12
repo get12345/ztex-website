@@ -11,14 +11,14 @@ const industryServices = [
     title: "建設業向けAI自動化",
     body: "図面からの積算支援、現場写真からの台帳自動生成など、現場監督をパソコン仕事から解放します。",
     href: "/industry/construction",
-    image: "/images/construction_ai.png",
+    image: "/images/construction_ai1.png",
     features: ["見積書・図面AI読み取り", "工事写真台帳の自動生成", "社内AIチャットボット"],
   },
   {
     title: "製造業向けAI自動化",
     body: "アナログなFAX受発注の自動入力や、定年退職するベテラン職人のノウハウ伝承をAIで実現します。",
     href: "/industry/manufacturing",
-    image: "/images/manufacturing_ai.png",
+    image: "/images/manufacturing_ai1.png",
     features: ["FAX・PDFのAI-OCR化", "匠の技のRAG化", "過去データの横断検索"],
   },
 ];

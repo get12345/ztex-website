@@ -42,7 +42,7 @@ const history = [
   {
     year: "2025年",
     label: "AI事業本格参入",
-    desc: "全国の中小企業向けに、AI導入による業務効率化支援を開始。導入企業数30社以上、継続契約率9割以上を達成。",
+    desc: "全国の中小企業向けに、AI導入による業務効率化支援を開始。導入企業数30社以上を達成。",
   },
 ];
 
@@ -125,6 +125,12 @@ export default function CompanyPage() {
               <dd className="text-neutral-200 md:col-span-2">
                 AI導入支援 / 業務自動化（AX）コンサルティング / システム開発 /
                 AI教育研修
+              </dd>
+            </div>
+            <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">
+              <dt className="font-medium text-neutral-400">保有資格・認定</dt>
+              <dd className="text-neutral-200 md:col-span-2">
+                Google AI プロフェッショナル認定
               </dd>
             </div>
             <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">

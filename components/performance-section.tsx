@@ -4,7 +4,6 @@ const performanceData = [
   { label: "導入企業数", value: "30社以上" },
   { label: "最大業務削減率", value: "80%以上" },
   { label: "月間業務削減時間", value: "60〜100時間" },
-  { label: "継続契約率", value: "9割以上" },
   { label: "対応エリア", value: "全国対応（本社：仙台）" },
   { label: "対応業種", value: "建設・不動産・営業・介護 ほか業種不問" },
 ];
