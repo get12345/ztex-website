@@ -77,8 +77,7 @@ export default function ManufacturingIndustryPage() {
         <p className="section-eyebrow">INDUSTRY 02 — MANUFACTURING</p>
 
         <h1 className="mt-3 text-2xl font-semibold md:text-3xl lg:text-4xl">
-          事務作業と技術伝承の壁をAIで突破する。<br className="hidden md:block" />
-          <span className="text-neutral-300">中小製造業向けの業務自動化</span>
+          製造業向けのAI導入
         </h1>
         <p className="mt-6 max-w-2xl text-sm text-neutral-300 md:text-base leading-relaxed">
           製造業＝工場の機械化だけではありません。「人の業務」におけるアナログな課題こそが深刻なボトルネックです。<br />

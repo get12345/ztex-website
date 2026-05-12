@@ -77,8 +77,7 @@ export default function ConstructionIndustryPage() {
         <p className="section-eyebrow">INDUSTRY 01 — CONSTRUCTION</p>
 
         <h1 className="mt-3 text-2xl font-semibold md:text-3xl lg:text-4xl">
-          「現場」は変えずに「事務・管理」を劇的に効率化。<br className="hidden md:block" />
-          <span className="text-neutral-300">宮城・東北を中心に全国の建設業向けAI導入</span>
+          建設業向けAI導入
         </h1>
         <p className="mt-6 max-w-2xl text-sm text-neutral-300 md:text-base leading-relaxed">
           建設業において最も自動化すべきは「現場監督（担当者）のパソコン仕事・書類仕事」です。<br />

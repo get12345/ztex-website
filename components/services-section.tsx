@@ -62,8 +62,6 @@ export function ServicesSection() {
 
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end mb-12">
           <h2 className="section-title">
-            INDUSTRY & TASK
-            <br />
             業界・業務特化型AI自動化
           </h2>
           <p className="section-description max-w-md">

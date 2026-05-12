@@ -28,7 +28,7 @@ export function MissionSection() {
           <div className="grid gap-6 text-sm text-neutral-300 md:grid-cols-2 md:text-base">
             <div className="space-y-3">
               <h3 className="text-sm font-medium text-neutral-100 md:text-base">
-                Client First = 現場視点の定着支援
+                現場視点の定着支援
               </h3>
               <p className="section-description">
                 宮城を拠点に、全国の中小企業に対し、業務効率化・自動化の支援を行っています。
@@ -39,7 +39,7 @@ export function MissionSection() {
 
             <div className="space-y-3">
               <h3 className="text-sm font-medium text-neutral-100 md:text-base">
-                Structural Design = 堅牢な仕組み化
+                堅牢な仕組み化
               </h3>
               <p className="section-description">
                 属人化した業務を「構造」として可視化・再定義します。
