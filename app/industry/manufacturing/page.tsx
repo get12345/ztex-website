@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { PricingSection } from "@/components/pricing-section";
 import { FAQSection } from "@/components/faq-section";
 import { AlertCircle, Wrench, Printer, Send, Search } from "lucide-react";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
   title: "製造業向けAI業務自動化ソリューション | 株式会社ZTEX",
@@ -74,6 +75,7 @@ export default function ManufacturingIndustryPage() {
       />
 
       <div className="section-inner py-16 md:py-20 mt-16">
+        <Breadcrumbs items={[{ label: "業界別", href: "/#services" }, { label: "製造業向け" }]} />
         <p className="section-eyebrow">INDUSTRY 02 — MANUFACTURING</p>
 
         <h1 className="mt-3 text-2xl font-semibold md:text-3xl lg:text-4xl">

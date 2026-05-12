@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { PricingSection } from "@/components/pricing-section";
 import { FAQSection } from "@/components/faq-section";
 import { AlertCircle, FileDigit, Landmark, CheckSquare, Mail } from "lucide-react";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
   title: "事務・バックオフィスのAI業務自動化 | 株式会社ZTEX",
@@ -70,6 +71,7 @@ export default function BackOfficeTaskPage() {
       />
 
       <div className="section-inner py-16 md:py-20 mt-16">
+        <Breadcrumbs items={[{ label: "業務別", href: "/#services" }, { label: "バックオフィス" }]} />
         <p className="section-eyebrow">TASK 02 — BACK OFFICE</p>
 
         <h1 className="mt-3 text-2xl font-semibold md:text-3xl lg:text-4xl">

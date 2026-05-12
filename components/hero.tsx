@@ -31,6 +31,16 @@ export function Hero() {
 
     // requestAnimationFrame の ID（クリーンアップ用）
     let frameId: number;
+    
+    // 表示状態の管理（画面外なら描画をスキップしてパフォーマンス向上）
+    let isVisible = true;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    observer.observe(canvas);
 
     // 画面幅に応じた点の数を決める
     const getPointCount = (w: number) => {
@@ -79,6 +89,10 @@ export function Hero() {
 
     // 1フレーム分の描画処理
     const drawFrame = () => {
+      // 次のフレームを常時予約するが、画面外なら描画処理はスキップ
+      frameId = requestAnimationFrame(drawFrame);
+      if (!isVisible) return;
+
       // キャンバス全体をクリア
       ctx.clearRect(0, 0, width, height);
 
@@ -132,9 +146,6 @@ export function Hero() {
           }
         }
       }
-
-      // 次のフレームを予約
-      frameId = requestAnimationFrame(drawFrame);
     };
 
     // 初期セットアップ
@@ -146,6 +157,7 @@ export function Hero() {
     return () => {
       window.removeEventListener("resize", resizeCanvas);
       cancelAnimationFrame(frameId);
+      observer.disconnect();
     };
   }, []);
 

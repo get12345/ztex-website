@@ -1,6 +1,9 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { useForm, Controller } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,21 +18,44 @@ import { Label } from "@/components/ui/label";
 import { submitContact } from "@/app/actions";
 import Script from "next/script";
 
-const SUBMIT_COOLDOWN_MS = 30_000; // 30秒間の連続送信防止
+const SUBMIT_COOLDOWN_MS = 30_000;
+
+const contactSchema = z.object({
+    name: z.string().min(1, "お名前を入力してください"),
+    email: z.string().email("有効なメールアドレスを入力してください"),
+    phone: z.string().optional(),
+    category: z.string().min(1, "お問い合わせ種別を選択してください"),
+    message: z.string().min(10, "お問い合わせ内容は10文字以上で入力してください"),
+});
+
+type ContactFormValues = z.infer<typeof contactSchema>;
 
 export default function ContactForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-
     const [error, setError] = useState<string | null>(null);
     const lastSubmitRef = useRef<number>(0);
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    const {
+        register,
+        handleSubmit,
+        control,
+        formState: { errors },
+    } = useForm<ContactFormValues>({
+        resolver: zodResolver(contactSchema),
+        defaultValues: {
+            name: "",
+            email: "",
+            phone: "",
+            category: "",
+            message: "",
+        },
+    });
+
+    const onSubmit = async (data: ContactFormValues) => {
         setIsSubmitting(true);
         setError(null);
 
-        // 連続送信防止（クライアント側レート制限）
         const now = Date.now();
         if (now - lastSubmitRef.current < SUBMIT_COOLDOWN_MS) {
             setError("送信の間隔が短すぎます。しばらくしてから再度お試しください。");
@@ -38,10 +64,14 @@ export default function ContactForm() {
         }
         lastSubmitRef.current = now;
 
-        const formData = new FormData(e.currentTarget);
+        const formData = new FormData();
+        formData.append("name", data.name);
+        formData.append("email", data.email);
+        if (data.phone) formData.append("phone", data.phone);
+        formData.append("category", data.category);
+        formData.append("message", data.message);
 
         try {
-            // reCAPTCHA トークン取得
             const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
             if (!siteKey) {
                 console.error("reCAPTCHA site key is missing");
@@ -107,7 +137,7 @@ export default function ContactForm() {
                             </Button>
                         </div>
                     ) : (
-                        <form onSubmit={handleSubmit} className="space-y-8">
+                        <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
                             {error && (
                                 <div className="rounded-lg border border-red-900/50 bg-red-950/30 p-4 text-sm text-red-400">
                                     <p className="flex items-center gap-2">
@@ -124,11 +154,11 @@ export default function ContactForm() {
                                     </Label>
                                     <Input
                                         id="name"
-                                        name="name"
-                                        required
                                         placeholder="山田 太郎"
-                                        className="border-neutral-800 bg-neutral-900/50 text-white placeholder:text-neutral-600 focus:border-neutral-600"
+                                        className={`border-neutral-800 bg-neutral-900/50 text-white placeholder:text-neutral-600 focus:border-neutral-600 ${errors.name ? "border-red-500 focus:border-red-500" : ""}`}
+                                        {...register("name")}
                                     />
+                                    {errors.name && <p className="text-xs text-red-400">{errors.name.message}</p>}
                                 </div>
 
                                 {/* メールアドレス */}
@@ -138,12 +168,12 @@ export default function ContactForm() {
                                     </Label>
                                     <Input
                                         id="email"
-                                        name="email"
                                         type="email"
-                                        required
                                         placeholder="example@ztex-japan.com"
-                                        className="border-neutral-800 bg-neutral-900/50 text-white placeholder:text-neutral-600 focus:border-neutral-600"
+                                        className={`border-neutral-800 bg-neutral-900/50 text-white placeholder:text-neutral-600 focus:border-neutral-600 ${errors.email ? "border-red-500 focus:border-red-500" : ""}`}
+                                        {...register("email")}
                                     />
+                                    {errors.email && <p className="text-xs text-red-400">{errors.email.message}</p>}
                                 </div>
 
                                 {/* 電話番号 */}
@@ -153,10 +183,10 @@ export default function ContactForm() {
                                     </Label>
                                     <Input
                                         id="phone"
-                                        name="phone"
                                         type="tel"
                                         placeholder="03-1234-5678"
                                         className="border-neutral-800 bg-neutral-900/50 text-white placeholder:text-neutral-600 focus:border-neutral-600"
+                                        {...register("phone")}
                                     />
                                 </div>
 
@@ -165,18 +195,25 @@ export default function ContactForm() {
                                     <Label htmlFor="category" className="text-neutral-300">
                                         お問い合わせ種別 <span className="text-red-500">*</span>
                                     </Label>
-                                    <Select name="category" required>
-                                        <SelectTrigger className="border-neutral-800 bg-neutral-900/50 text-white focus:border-neutral-600">
-                                            <SelectValue placeholder="選択してください" />
-                                        </SelectTrigger>
-                                        <SelectContent className="border-neutral-800 bg-neutral-900 text-white">
-                                            <SelectItem value="service">サービス導入について</SelectItem>
-                                            <SelectItem value="recruit">採用について</SelectItem>
-                                            <SelectItem value="media">取材・メディア掲載について</SelectItem>
-                                            <SelectItem value="partnership">協業・パートナーシップについて</SelectItem>
-                                            <SelectItem value="other">その他</SelectItem>
-                                        </SelectContent>
-                                    </Select>
+                                    <Controller
+                                        name="category"
+                                        control={control}
+                                        render={({ field }) => (
+                                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                                <SelectTrigger className={`border-neutral-800 bg-neutral-900/50 text-white focus:border-neutral-600 ${errors.category ? "border-red-500 focus:border-red-500" : ""}`}>
+                                                    <SelectValue placeholder="選択してください" />
+                                                </SelectTrigger>
+                                                <SelectContent className="border-neutral-800 bg-neutral-900 text-white">
+                                                    <SelectItem value="service">サービス導入について</SelectItem>
+                                                    <SelectItem value="recruit">採用について</SelectItem>
+                                                    <SelectItem value="media">取材・メディア掲載について</SelectItem>
+                                                    <SelectItem value="partnership">協業・パートナーシップについて</SelectItem>
+                                                    <SelectItem value="other">その他</SelectItem>
+                                                </SelectContent>
+                                            </Select>
+                                        )}
+                                    />
+                                    {errors.category && <p className="text-xs text-red-400">{errors.category.message}</p>}
                                 </div>
 
                                 {/* お問い合わせ内容 */}
@@ -186,11 +223,11 @@ export default function ContactForm() {
                                     </Label>
                                     <Textarea
                                         id="message"
-                                        name="message"
-                                        required
                                         placeholder="お問い合わせ内容をご記入ください"
-                                        className="min-h-[200px] border-neutral-800 bg-neutral-900/50 text-white placeholder:text-neutral-600 focus:border-neutral-600"
+                                        className={`min-h-[200px] border-neutral-800 bg-neutral-900/50 text-white placeholder:text-neutral-600 focus:border-neutral-600 ${errors.message ? "border-red-500 focus:border-red-500" : ""}`}
+                                        {...register("message")}
                                     />
+                                    {errors.message && <p className="text-xs text-red-400">{errors.message.message}</p>}
                                 </div>
                             </div>
 
@@ -210,3 +247,4 @@ export default function ContactForm() {
         </div>
     );
 }
+

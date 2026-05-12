@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
 
 const industryLinks = [
   { href: "/industry/construction", label: "建設業向け" },
@@ -79,13 +80,15 @@ export function Header() {
               </button>
 
               {/* ボタンのすぐ下から少し余白をつけてドロップダウンを出す */}
-              <div
-                className={`
-        absolute left-1/2 -translate-x-1/2 top-full z-50 pt-3
-        transition-all duration-150
-        ${isServicesOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}
-      `}
-              >
+              <AnimatePresence>
+                {isServicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute left-1/2 -translate-x-1/2 top-full z-50 pt-3 pointer-events-auto"
+                  >
                 <div className="w-[520px] rounded-xl border border-neutral-800 bg-black/95 shadow-xl shadow-black/80 flex p-3">
                   <div className="w-1/3 flex flex-col border-r border-neutral-800 pr-3">
                     <p className="px-3 py-1.5 text-[11px] font-semibold tracking-wider text-neutral-500">INDUSTRY</p>
@@ -121,7 +124,9 @@ export function Header() {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </motion.div>
+              )}
+              </AnimatePresence>
             </div>
             {navItems1.map((item) => (
               <Link
@@ -150,13 +155,15 @@ export function Header() {
               </button>
 
               {/* ボタンのすぐ下から少し余白をつけてドロップダウンを出す */}
-              <div
-                className={`
-        absolute left-1/2 -translate-x-1/2 top-full z-50 pt-3
-        transition-all duration-150
-        ${isCompanyOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}
-      `}
-              >
+              <AnimatePresence>
+                {isCompanyOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute left-1/2 -translate-x-1/2 top-full z-50 pt-3 pointer-events-auto"
+                  >
                 <div className="w-40 rounded-xl border border-neutral-800 bg-black/95 shadow-xl shadow-black/80 flex flex-col p-2">
                   {companyLinks.map((item) => (
                     <Link
@@ -168,7 +175,9 @@ export function Header() {
                     </Link>
                   ))}
                 </div>
-              </div>
+              </motion.div>
+              )}
+              </AnimatePresence>
             </div>
 
             {/* その他メニュー 後半 */}
@@ -209,8 +218,15 @@ export function Header() {
       </div>
 
       {/* ▼ モバイル用ドロワーメニュー */}
+      <AnimatePresence>
       {open && (
-        <div className="border-t border-neutral-900 bg-black/95 md:hidden">
+        <motion.div 
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="border-t border-neutral-900 bg-black/95 md:hidden overflow-hidden"
+        >
           <div className="mx-auto flex max-w-6xl flex-col px-4 py-3 text-sm text-neutral-200">
             {/* TOP */}
             <Link
@@ -322,8 +338,9 @@ export function Header() {
               </Link>
             </Button>
           </div>
-        </div>
+        </motion.div>
       )}
+      </AnimatePresence>
     </header>
   );
 }

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { FloatingCTA } from "@/components/floating-cta";
 
 import { Inter } from "next/font/google";
 
@@ -98,6 +99,9 @@ export default function RootLayout({
 
             {/* ★ 全ページ共通フッター（常に一番下に出す） */}
             <Footer />
+            
+            {/* ★ フローティングCTA（スクロール追従） */}
+            <FloatingCTA />
           </div>
         </div>
       </body>
