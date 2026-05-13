@@ -1,7 +1,4 @@
-"use client";
-
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+// components/flow-section.tsx
 
 const steps = [
   {
@@ -27,46 +24,31 @@ const steps = [
 ];
 
 export function FlowSection() {
-  const targetRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: targetRef });
-
-  // 縦スクロールを横スクロールに変換
-  // PCやスマホで横幅の差が出るため、全体の約 -65% を移動させる設定
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"]);
-
   return (
-    <section ref={targetRef} className="relative h-[250vh] bg-black">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden border-b border-neutral-900/80">
-        <div className="flex h-full w-full items-center">
-          
-          <div className="ml-5 md:ml-12 shrink-0 w-[80vw] md:w-[400px]">
-            <p className="section-eyebrow">FLOW</p>
-            <h2 className="section-title">制作・導入の流れ</h2>
-            <p className="section-description mt-2 hidden md:block">
-              （スクロールして進行をご確認ください）
-            </p>
-          </div>
+    <section className="border-b border-neutral-900/80">
+      <div className="section-inner py-10 md:py-14">
+        <p className="section-eyebrow">FLOW</p>
+        <h2 className="section-title">制作・導入の流れ</h2>
 
-          <motion.div style={{ x }} className="flex gap-8 px-10">
-            {steps.map((step) => (
-              <div
-                key={step.label}
-                className="w-[70vw] md:w-[350px] shrink-0 border-l border-neutral-800 bg-neutral-950/40 p-6 shadow-[0_0_20px_rgba(0,0,0,0.5)] rounded-r-xl"
-              >
-                <div className="text-[11px] uppercase tracking-[0.25em] text-neutral-500">
-                  {step.label}
-                </div>
-                <p className="mt-4 text-base md:text-lg text-neutral-100 font-semibold">
+        <ol className="mt-6 space-y-5 text-sm text-neutral-300">
+          {steps.map((step) => (
+            <li
+              key={step.label}
+              className="flex flex-col gap-2 border-l border-neutral-800 pl-4 md:flex-row md:gap-4"
+            >
+              <div className="text-[11px] uppercase tracking-[0.25em] text-neutral-500">
+                {step.label}
+              </div>
+              <div>
+                <p className="text-sm text-neutral-100 md:text-base">
                   {step.title}
                 </p>
-                <p className="section-description mt-3">{step.body}</p>
+                <p className="section-description mt-1">{step.body}</p>
               </div>
-            ))}
-          </motion.div>
-
-        </div>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
 }
-
