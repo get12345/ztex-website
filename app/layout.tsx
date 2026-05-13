@@ -5,6 +5,8 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FloatingCTA } from "@/components/floating-cta";
 import { ScrollProgress } from "@/components/scroll-progress";
+import { LenisProvider } from "@/components/lenis-provider";
+import { CustomCursor } from "@/components/custom-cursor";
 
 import { Inter } from "next/font/google";
 
@@ -77,7 +79,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={`min-h-screen bg-black text-white ${inter.className}`}>
+      <body className={`min-h-screen bg-black text-white ${inter.className} cursor-default md:cursor-none`}>
+        <CustomCursor />
+        <LenisProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -108,6 +112,7 @@ export default function RootLayout({
             <FloatingCTA />
           </div>
         </div>
+        </LenisProvider>
       </body>
     </html>
   );

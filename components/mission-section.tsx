@@ -1,17 +1,17 @@
-import Image from "next/image";
+import { ParallaxImage } from "@/components/ui/parallax-image";
+import { TextReveal } from "@/components/ui/text-reveal";
 
 export function MissionSection() {
   return (
     <section id="mission" className="relative border-b border-neutral-900/80 overflow-hidden">
       {/* Background Image Placeholder */}
       <div className="absolute inset-0 -z-10">
-        <Image
+        <ParallaxImage
           src="/images/mission.png"
           alt="Mission Background"
-          fill
-          className="object-cover opacity-30"
+          className="absolute inset-0 h-full w-full"
         />
-        <div className="absolute inset-0 bg-neutral-950/80" />
+        <div className="absolute inset-0 bg-neutral-950/80 z-10" />
       </div>
 
       <div className="section-inner py-10 md:py-14">
@@ -19,9 +19,7 @@ export function MissionSection() {
           <div>
             <p className="section-eyebrow">MISSION</p>
             <h2 className="section-title">
-              AIの力で日本の中小企業の
-              <br />
-              生産性を最大化する
+              <TextReveal text="AIの力で日本の中小企業の\n生産性を最大化する" />
             </h2>
           </div>
 
